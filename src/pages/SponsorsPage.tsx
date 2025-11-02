@@ -6,26 +6,71 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Youtube, Instagram, Linkedin } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
+import battlefieldBg from "@/assets/sponsors-battlefield.jpg";
 
 interface Sponsor {
   id: number;
   name: string;
+  logo: string;
+  description: string;
+  website: string;
+}
+
+interface SponsorCategory {
   category: string;
   icon: string;
   color: string;
+  sponsors: Sponsor[];
 }
 
-const sponsors: Sponsor[] = [
-  { id: 1, name: "Razor Edge", category: "Gaming Partner", icon: "🎮", color: "fire-orange" },
-  { id: 2, name: "BattleBite Café", category: "Food Partner", icon: "🍔", color: "neon-cyan" },
-  { id: 3, name: "MedZone", category: "Health Partner", icon: "🏥", color: "fire-orange" },
-  { id: 4, name: "CyberForge", category: "Tech Partner", icon: "⚙️", color: "neon-cyan" },
-  { id: 5, name: "LearnHub", category: "EdTech Partner", icon: "📚", color: "fire-orange" },
-  { id: 6, name: "StreamWave", category: "Media Partner", icon: "📺", color: "neon-cyan" },
-  { id: 7, name: "BassZone", category: "Music Partner", icon: "🎵", color: "fire-orange" },
-  { id: 8, name: "TechNova", category: "Innovation Partner", icon: "💡", color: "neon-cyan" },
-  { id: 9, name: "PowerPlay Events", category: "Event Partner", icon: "🏆", color: "fire-orange" },
-  { id: 10, name: "FastLink Fiber", category: "Internet Partner", icon: "🌐", color: "neon-cyan" },
+const sponsorCategories: SponsorCategory[] = [
+  {
+    category: "Gaming Partners",
+    icon: "🎮",
+    color: "fire-orange",
+    sponsors: [
+      { id: 1, name: "Razor Edge", logo: "🎮", description: "Elite gaming gear and peripherals", website: "#" },
+      { id: 2, name: "ProGamer Hub", logo: "🕹️", description: "Professional gaming arena", website: "#" },
+      { id: 3, name: "GameVault", logo: "🎯", description: "Gaming tournaments & prizes", website: "#" },
+    ]
+  },
+  {
+    category: "Food Partners",
+    icon: "🍔",
+    color: "neon-cyan",
+    sponsors: [
+      { id: 4, name: "BattleBite Café", logo: "🍔", description: "Fuel your gaming marathon", website: "#" },
+      { id: 5, name: "Energy Eats", logo: "🍕", description: "Quick bites for gamers", website: "#" },
+      { id: 6, name: "Snack Attack", logo: "🌮", description: "Ultimate gaming snacks", website: "#" },
+    ]
+  },
+  {
+    category: "Tech Partners",
+    icon: "⚙️",
+    color: "fire-orange",
+    sponsors: [
+      { id: 7, name: "CyberForge", logo: "⚙️", description: "Next-gen tech solutions", website: "#" },
+      { id: 8, name: "TechNova", logo: "💡", description: "Innovation at its peak", website: "#" },
+    ]
+  },
+  {
+    category: "Media Partners",
+    icon: "📺",
+    color: "neon-cyan",
+    sponsors: [
+      { id: 9, name: "StreamWave", logo: "📺", description: "Live streaming excellence", website: "#" },
+      { id: 10, name: "PixelCast", logo: "📡", description: "Broadcasting your victories", website: "#" },
+    ]
+  },
+  {
+    category: "Event Partners",
+    icon: "🏆",
+    color: "fire-orange",
+    sponsors: [
+      { id: 11, name: "PowerPlay Events", logo: "🏆", description: "Creating legendary moments", website: "#" },
+      { id: 12, name: "Epic Gatherings", logo: "🎪", description: "Unforgettable experiences", website: "#" },
+    ]
+  },
 ];
 
 const SponsorsPage = () => {
@@ -33,121 +78,145 @@ const SponsorsPage = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="fixed inset-0 z-0"
+        style={{
+          backgroundImage: `url(${battlefieldBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+        }}
+      >
+        <div className="absolute inset-0 bg-background/90 backdrop-blur-sm" />
+      </div>
+      
       <SparkEffect />
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background z-0" />
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--fire-orange)/0.3),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,hsl(var(--neon-cyan)/0.2),transparent_40%)]" />
-        </div>
-        
+      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="container mx-auto px-4 z-10 text-center">
-          <h1 className="text-5xl md:text-7xl font-orbitron font-bold mb-6 animate-fade-in">
-            <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-glow-pulse">
-              Our Power Sponsors
+          <h1 className="text-5xl md:text-7xl font-orbitron font-bold mb-6">
+            <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
+              OUR POWER SPONSORS
             </span>
           </h1>
-          <p className="text-xl md:text-3xl font-exo text-muted-foreground animate-fade-in animation-delay-200">
+          <p className="text-2xl md:text-4xl font-exo text-muted-foreground uppercase tracking-wider">
             The Backbone of Victory
           </p>
-          <div className="mt-8 h-1 w-32 mx-auto bg-gradient-to-r from-transparent via-primary to-transparent animate-pulse" />
+          <div className="mt-8 h-1 w-32 mx-auto bg-gradient-to-r from-transparent via-primary to-transparent" />
         </div>
       </section>
 
-      {/* Sponsors Grid */}
+      {/* Sponsors by Category */}
+      <section className="container mx-auto px-4 py-16 relative z-10 space-y-20">
+        {sponsorCategories.map((category, catIndex) => (
+          <div key={catIndex} className="space-y-8">
+            {/* Category Header */}
+            <div className="flex items-center gap-4 mb-8">
+              <span className="text-5xl">{category.icon}</span>
+              <h2 className={`text-3xl md:text-4xl font-orbitron font-bold uppercase tracking-wider ${
+                category.color === "fire-orange" ? "text-primary" : "text-secondary"
+              }`}>
+                {category.category}
+              </h2>
+              <div className={`flex-1 h-0.5 ${
+                category.color === "fire-orange" 
+                  ? "bg-gradient-to-r from-primary to-transparent" 
+                  : "bg-gradient-to-r from-secondary to-transparent"
+              }`} />
+            </div>
+
+            {/* Sponsors Grid for this Category */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {category.sponsors.map((sponsor) => (
+                <Card
+                  key={sponsor.id}
+                  className={`
+                    relative overflow-hidden cursor-pointer transition-all duration-300 
+                    border-2 bg-card/30 backdrop-blur-md group
+                    ${hoveredCard === sponsor.id 
+                      ? category.color === "fire-orange" 
+                        ? "border-primary shadow-[0_0_40px_hsl(var(--fire-orange)/0.8)]" 
+                        : "border-secondary shadow-[0_0_40px_hsl(var(--neon-cyan)/0.8)]"
+                      : "border-border/50"
+                    }
+                  `}
+                  onMouseEnter={() => setHoveredCard(sponsor.id)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
+                  {/* Diagonal stripe background */}
+                  <div className={`
+                    absolute inset-0 opacity-10
+                    ${category.color === "fire-orange" 
+                      ? "bg-[linear-gradient(45deg,transparent_25%,hsl(var(--fire-orange))_25%,hsl(var(--fire-orange))_50%,transparent_50%,transparent_75%,hsl(var(--fire-orange))_75%,hsl(var(--fire-orange)))]" 
+                      : "bg-[linear-gradient(45deg,transparent_25%,hsl(var(--neon-cyan))_25%,hsl(var(--neon-cyan))_50%,transparent_50%,transparent_75%,hsl(var(--neon-cyan))_75%,hsl(var(--neon-cyan)))]"
+                    }
+                    bg-[length:20px_20px]
+                  `} />
+
+                  <CardContent className="p-6 relative z-10">
+                    {/* Logo */}
+                    <div className={`
+                      text-7xl mb-4 transition-transform duration-300
+                      ${hoveredCard === sponsor.id ? "scale-110" : "scale-100"}
+                    `}>
+                      {sponsor.logo}
+                    </div>
+                    
+                    {/* Name - Always visible */}
+                    <h3 className="text-2xl font-orbitron font-bold mb-2">
+                      {sponsor.name}
+                    </h3>
+                    
+                    {/* Details - Show on hover */}
+                    <div className={`
+                      transition-all duration-300 overflow-hidden
+                      ${hoveredCard === sponsor.id 
+                        ? "max-h-40 opacity-100 mt-4" 
+                        : "max-h-0 opacity-0"
+                      }
+                    `}>
+                      <p className="text-muted-foreground mb-3">
+                        {sponsor.description}
+                      </p>
+                      <div className={`
+                        inline-block px-4 py-2 text-sm font-exo font-bold uppercase tracking-wider
+                        border-2 rounded
+                        ${category.color === "fire-orange" 
+                          ? "border-primary text-primary" 
+                          : "border-secondary text-secondary"
+                        }
+                      `}>
+                        Visit Partner →
+                      </div>
+                    </div>
+                  </CardContent>
+
+                  {/* Corner accent */}
+                  <div className={`
+                    absolute top-0 right-0 w-20 h-20 opacity-50
+                    ${category.color === "fire-orange" 
+                      ? "bg-gradient-to-bl from-primary to-transparent" 
+                      : "bg-gradient-to-bl from-secondary to-transparent"
+                    }
+                  `} />
+                </Card>
+              ))}
+            </div>
+          </div>
+        ))}
+      </section>
+
+      {/* CTA Section */}
       <section className="container mx-auto px-4 py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
-          {sponsors.map((sponsor, index) => (
-            <Card
-              key={sponsor.id}
-              className={`
-                relative overflow-hidden cursor-pointer transition-all duration-500 
-                border-2 bg-card/50 backdrop-blur-sm
-                ${hoveredCard === sponsor.id 
-                  ? sponsor.color === "fire-orange" 
-                    ? "border-primary shadow-[0_0_30px_hsl(var(--fire-orange)/0.6)] scale-105" 
-                    : "border-secondary shadow-[0_0_30px_hsl(var(--neon-cyan)/0.6)] scale-105"
-                  : "border-border hover:border-muted-foreground"
-                }
-                animate-fade-in
-              `}
-              style={{ animationDelay: `${index * 100}ms` }}
-              onMouseEnter={() => setHoveredCard(sponsor.id)}
-              onMouseLeave={() => setHoveredCard(null)}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-card via-card/80 to-background opacity-90" />
-              
-              {/* Animated background glow */}
-              <div className={`
-                absolute inset-0 opacity-0 transition-opacity duration-500
-                ${hoveredCard === sponsor.id ? "opacity-100" : ""}
-              `}>
-                <div className={`
-                  absolute inset-0 
-                  ${sponsor.color === "fire-orange" 
-                    ? "bg-[radial-gradient(circle_at_50%_50%,hsl(var(--fire-orange)/0.2),transparent_70%)]" 
-                    : "bg-[radial-gradient(circle_at_50%_50%,hsl(var(--neon-cyan)/0.2),transparent_70%)]"
-                  }
-                `} />
-              </div>
-
-              <CardContent className="p-8 relative z-10 flex flex-col items-center justify-center min-h-[280px]">
-                <div className={`
-                  text-6xl mb-4 transition-transform duration-500
-                  ${hoveredCard === sponsor.id ? "scale-125 animate-bounce" : "scale-100"}
-                `}>
-                  {sponsor.icon}
-                </div>
-                
-                <h3 className="text-2xl font-orbitron font-bold mb-2 text-center">
-                  {sponsor.name}
-                </h3>
-                
-                <div className={`
-                  inline-block px-4 py-2 rounded-full text-sm font-exo font-medium
-                  ${sponsor.color === "fire-orange" 
-                    ? "bg-primary/20 text-primary border border-primary/50" 
-                    : "bg-secondary/20 text-secondary border border-secondary/50"
-                  }
-                `}>
-                  {sponsor.category}
-                </div>
-
-                {/* Particle effect on hover */}
-                {hoveredCard === sponsor.id && (
-                  <div className="absolute inset-0 pointer-events-none">
-                    {[...Array(5)].map((_, i) => (
-                      <div
-                        key={i}
-                        className={`
-                          absolute w-2 h-2 rounded-full
-                          ${sponsor.color === "fire-orange" ? "bg-primary" : "bg-secondary"}
-                          animate-spark-rise
-                        `}
-                        style={{
-                          left: `${Math.random() * 100}%`,
-                          bottom: "0",
-                          animationDelay: `${i * 0.2}s`,
-                        }}
-                      />
-                    ))}
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {/* CTA Section */}
-        <div className="text-center py-16 relative">
+        <div className="text-center">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent blur-3xl" />
-          <h2 className="text-3xl md:text-4xl font-orbitron font-bold mb-6 relative z-10">
+          <h2 className="text-3xl md:text-5xl font-orbitron font-bold mb-6 relative z-10 uppercase tracking-wider">
             Join Our Battle Alliance
           </h2>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto relative z-10">
+          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto relative z-10 text-lg">
             Become a part of the most electrifying college fest. Power up with us and create legendary moments.
           </p>
           <Button 
