@@ -128,7 +128,7 @@ const SponsorsPage = () => {
             </div>
 
             {/* Sponsors Grid for this Category */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {category.sponsors.map((sponsor) => (
                 <a
                   key={sponsor.id}
@@ -139,39 +139,32 @@ const SponsorsPage = () => {
                   onMouseEnter={() => setHoveredCard(sponsor.id)}
                   onMouseLeave={() => setHoveredCard(null)}
                 >
-                  <Card className="relative overflow-hidden border-2 border-border bg-card/50 backdrop-blur-sm h-full group">
-                    <CardContent className="p-8">
+                  <Card className="relative overflow-hidden border border-border bg-white/95 backdrop-blur-sm h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                    <CardContent className="p-6 flex flex-col items-center justify-center text-center min-h-[200px]">
                       {/* Logo */}
-                      <div className="text-8xl mb-6">
+                      <div className="text-7xl mb-4">
                         {sponsor.logo}
                       </div>
                       
                       {/* Name */}
-                      <h3 className={`text-2xl font-orbitron font-bold mb-3 ${
-                        category.color === "fire-orange" ? "text-primary" : "text-secondary"
-                      }`}>
+                      <h3 className="text-lg font-orbitron font-bold text-gray-900 mb-2">
                         {sponsor.name}
                       </h3>
                       
                       {/* Details - Show on hover */}
                       {hoveredCard === sponsor.id && (
-                        <div className="mt-4 space-y-3">
-                          <p className="text-muted-foreground leading-relaxed">
+                        <div className="mt-3 space-y-2">
+                          <p className="text-gray-600 text-sm leading-relaxed">
                             {sponsor.description}
                           </p>
-                          <div className={`inline-flex items-center gap-2 text-sm font-semibold ${
-                            category.color === "fire-orange" ? "text-primary" : "text-secondary"
+                          <div className={`inline-flex items-center gap-2 text-xs font-semibold ${
+                            category.color === "fire-orange" ? "text-orange-600" : "text-cyan-600"
                           }`}>
                             Visit Website →
                           </div>
                         </div>
                       )}
                     </CardContent>
-
-                    {/* Subtle border highlight on hover */}
-                    <div className={`absolute inset-0 border-2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none ${
-                      category.color === "fire-orange" ? "border-primary/50" : "border-secondary/50"
-                    }`} />
                   </Card>
                 </a>
               ))}
