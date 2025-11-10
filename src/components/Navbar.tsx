@@ -42,6 +42,18 @@ const Navbar = () => {
       setIsOpen(false);
       return;
     }
+
+    if (id === "contact-page") {
+      navigate("/contact");
+      setIsOpen(false);
+      return;
+    }
+
+    if (id === "about-page") {
+      navigate("/about");
+      setIsOpen(false);
+      return;
+    }
     
     if (location.pathname !== "/") {
       navigate("/");
@@ -58,11 +70,11 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", id: "home" },
-    { name: "About", id: "about" },
+    { name: "About", id: "about-page" },
     { name: "Events", id: "events-page" },
     { name: "Gallery", id: "gallery-page" },
     { name: "Schedule", id: "schedule-page" },
-    { name: "Contact", id: "contact" },
+    { name: "Contact", id: "contact-page" },
     { name: "Sponsors", id: "sponsors-page" },
   ];
 

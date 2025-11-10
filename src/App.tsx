@@ -8,6 +8,8 @@ import EventsPage from "./pages/EventsPage";
 import GalleryPage from "./pages/GalleryPage";
 import SponsorsPage from "./pages/SponsorsPage";
 import SchedulePage from "./pages/SchedulePage";
+import ContactPage from "./pages/ContactPage";
+import AboutPage from "./pages/AboutPage";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ui/ScrollToTop";
 
@@ -26,6 +28,8 @@ const App = () => (
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/sponsors" element={<SponsorsPage />} />
           <Route path="/schedule" element={<SchedulePage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/about" element={<AboutPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
