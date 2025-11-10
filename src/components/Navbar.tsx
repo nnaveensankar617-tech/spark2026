@@ -78,6 +78,11 @@ const Navbar = () => {
     { name: "Sponsors", id: "sponsors-page" },
   ];
 
+  const handleRegisterClick = () => {
+    navigate("/register");
+    setIsOpen(false);
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -114,6 +119,13 @@ const Navbar = () => {
                 {link.name}
               </Button>
             ))}
+            <Button
+              variant="hero"
+              onClick={handleRegisterClick}
+              className="font-orbitron ml-2"
+            >
+              Register
+            </Button>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -139,6 +151,13 @@ const Navbar = () => {
                   {link.name}
                 </Button>
               ))}
+              <Button
+                variant="hero"
+                onClick={handleRegisterClick}
+                className="w-full justify-start font-orbitron mt-2"
+              >
+                Register
+              </Button>
             </div>
           </div>
         )}

@@ -89,34 +89,27 @@ const GalleryPage = () => {
         </div>
       </section>
 
-      {/* Gallery Grid - Masonry with Hover Effects */}
+      {/* Gallery Grid - Image Focus Only */}
       <section className="py-20 relative">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {filteredItems.map((item, index) => (
               <div
                 key={item.id}
-                className="group relative aspect-[4/3] rounded-xl overflow-hidden border-2 border-border hover:border-primary transition-all duration-500 cursor-pointer animate-slide-up hover:scale-[1.02] hover:shadow-[0_0_30px_hsl(var(--primary)/0.4)]"
-                style={{ animationDelay: `${index * 0.05}s` }}
+                className="group relative aspect-square rounded-lg overflow-hidden border border-border hover:border-primary transition-all duration-300 cursor-pointer animate-fade-in hover:scale-105 hover:shadow-[0_0_20px_hsl(var(--primary)/0.4)]"
+                style={{ animationDelay: `${index * 0.03}s` }}
                 onClick={() => setSelectedImage(item)}
               >
-                {/* Background Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-card/90 to-card/50 flex items-center justify-center transition-all duration-500 group-hover:from-card/70 group-hover:to-card/30">
-                  <div className="text-center p-6 transform transition-transform duration-500 group-hover:scale-110">
-                    <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-primary/30 flex items-center justify-center transition-all duration-500 group-hover:bg-primary/50 group-hover:shadow-[0_0_20px_hsl(var(--primary)/0.6)]">
-                      <span className="text-3xl">📸</span>
-                    </div>
-                    <h3 className="text-xl font-orbitron font-bold mb-2 group-hover:text-primary transition-colors duration-300">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-500">{item.description}</p>
-                  </div>
+                {/* Image Placeholder */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                  <span className="text-6xl">📸</span>
                 </div>
                 
-                {/* Neon Border Pulse on Hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[inset_0_0_20px_hsl(var(--primary)/0.5)]" />
-                
-                {/* Caption Overlay */}
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/90 to-transparent p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                  <p className="text-sm font-orbitron font-bold text-primary">{item.category}</p>
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="text-center">
+                    <h3 className="text-sm font-orbitron font-bold text-white">{item.title}</h3>
+                  </div>
                 </div>
               </div>
             ))}
@@ -222,62 +215,35 @@ const GalleryPage = () => {
         </div>
       </section>
 
-      {/* Spotlight Mode - Enhanced Lightbox Modal */}
+      {/* Spotlight Mode - Simplified Lightbox */}
       {selectedImage && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-xl p-4 animate-fade-in"
           onClick={() => setSelectedImage(null)}
         >
-          {/* Spark Particles in Background */}
-          <div className="absolute inset-0 pointer-events-none">
-            {[...Array(20)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute bottom-0 w-1 h-1 bg-primary rounded-full animate-pulse"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 2}s`,
-                  animationDuration: `${2 + Math.random() * 2}s`,
-                }}
-              />
-            ))}
-          </div>
-          
           <div
-            className="relative max-w-6xl w-full bg-card/95 backdrop-blur-md border-2 border-primary rounded-3xl overflow-hidden animate-scale-in shadow-[0_0_60px_hsl(var(--primary)/0.5)]"
+            className="relative max-w-4xl w-full bg-card/95 backdrop-blur-md border-2 border-primary rounded-2xl overflow-hidden animate-scale-in shadow-[0_0_60px_hsl(var(--primary)/0.5)]"
             onClick={(e) => e.stopPropagation()}
           >
             <Button
               variant="battle"
               size="icon"
-              className="absolute top-6 right-6 z-10 hover:scale-110 transition-transform duration-300 hover:shadow-[0_0_20px_hsl(var(--primary)/0.8)]"
+              className="absolute top-4 right-4 z-10 hover:scale-110 transition-transform duration-300"
               onClick={() => setSelectedImage(null)}
             >
               <X className="w-6 h-6" />
             </Button>
             
-            <div className="grid md:grid-cols-2 gap-8 p-10">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center border-2 border-border relative overflow-hidden group">
-                <span className="text-8xl z-10 relative group-hover:scale-110 transition-transform duration-500">📸</span>
-                
-                {/* Glowing Effect */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="p-8">
+              <div className="aspect-video rounded-xl bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center mb-6">
+                <span className="text-9xl">📸</span>
               </div>
               
-              <div className="flex flex-col justify-center space-y-6">
-                <h3 className="text-4xl md:text-5xl font-orbitron font-bold text-glow-orange animate-glow-pulse">
+              <div className="text-center space-y-3">
+                <h3 className="text-3xl font-orbitron font-bold text-primary">
                   {selectedImage.title}
                 </h3>
-                <div className="space-y-4">
-                  <div className="border-l-4 border-secondary pl-4">
-                    <span className="text-sm text-muted-foreground uppercase tracking-wider font-orbitron">Category</span>
-                    <p className="text-2xl font-orbitron font-bold text-secondary text-glow-cyan">{selectedImage.category}</p>
-                  </div>
-                  <div className="border-l-4 border-primary pl-4">
-                    <span className="text-sm text-muted-foreground uppercase tracking-wider font-orbitron">Description</span>
-                    <p className="text-lg text-foreground leading-relaxed">{selectedImage.description}</p>
-                  </div>
-                </div>
+                <p className="text-lg text-secondary font-semibold">{selectedImage.category}</p>
               </div>
             </div>
           </div>
