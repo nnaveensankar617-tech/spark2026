@@ -99,11 +99,11 @@ const Navbar = () => {
           >
             <img 
               src={sparkLogo} 
-              alt="SPARK 2K25" 
+              alt="SPARK 2K26" 
               className="h-12 w-12 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12"
             />
             <span className="text-2xl font-orbitron font-bold text-glow-cyan">
-              SPARK <span className="text-primary">2K25</span>
+              SPARK <span className="text-primary">2K26</span>
             </span>
           </div>
 

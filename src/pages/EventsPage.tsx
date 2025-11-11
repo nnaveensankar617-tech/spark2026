@@ -194,7 +194,7 @@ const EventsPage = () => {
           <div className="text-center mb-12 animate-slide-up">
             <h1 className="text-5xl md:text-7xl font-orbitron font-bold mb-4">
               <span className="text-glow-cyan">SPARK</span>{" "}
-              <span className="text-primary">2K25</span>
+              <span className="text-primary">2K26</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground font-exo mb-2">
               Where Passion Meets Power

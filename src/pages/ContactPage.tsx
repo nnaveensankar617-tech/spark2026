@@ -19,7 +19,7 @@ const ContactPage = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast.success("Message sent! We'll get back to you soon.", {
-      description: "Thank you for contacting SPARK 2K25",
+      description: "Thank you for contacting SPARK 2K26",
     });
     setFormData({ name: "", email: "", phone: "", message: "" });
   };
@@ -55,7 +55,7 @@ const ContactPage = () => {
               </span>
             </div>
             <h1 className="text-5xl md:text-7xl font-orbitron font-bold mb-6">
-              Contact <span className="text-secondary text-glow-cyan">SPARK 2K25</span>
+              Contact <span className="text-secondary text-glow-cyan">SPARK 2K26</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto font-exo">
               Have questions? Want to register? Reach out to us and become part of the revolution
@@ -173,8 +173,8 @@ const ContactPage = () => {
                     <h3 className="text-lg font-orbitron font-bold text-foreground mb-2">
                       Email Us
                     </h3>
-                    <p className="text-muted-foreground font-exo">spark2k25@svcollege.edu.in</p>
-                    <p className="text-muted-foreground font-exo">info@spark2k25.com</p>
+                    <p className="text-muted-foreground font-exo">spark2K26@svcollege.edu.in</p>
+                    <p className="text-muted-foreground font-exo">info@spark2K26.com</p>
                   </div>
                 </div>
               </div>

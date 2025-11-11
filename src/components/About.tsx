@@ -2,26 +2,26 @@ import { Target, Users, Rocket, Zap } from "lucide-react";
 
 const About = () => {
   const features = [
-    {
-      icon: Target,
-      title: "Mission",
-      description: "Empowering students through innovation, technology, and competitive gaming excellence.",
-    },
-    {
-      icon: Users,
-      title: "Community",
-      description: "Bringing together 1000+ students from across the region for an unforgettable experience.",
-    },
-    {
-      icon: Rocket,
-      title: "Innovation",
-      description: "Showcasing cutting-edge tech projects, gaming tournaments, and cultural performances.",
-    },
-    {
-      icon: Zap,
-      title: "Energy",
-      description: "High-octane competitions, adrenaline-pumping challenges, and electrifying entertainment.",
-    },
+    // {
+    //   icon: Target,
+    //   title: "Mission",
+    //   description: "Empowering students through innovation, technology, and competitive gaming excellence.",
+    // },
+    // {
+    //   icon: Users,
+    //   title: "Community",
+    //   description: "Bringing together 1000+ students from across the region for an unforgettable experience.",
+    // },
+    // {
+    //   icon: Rocket,
+    //   title: "Innovation",
+    //   description: "Showcasing cutting-edge tech projects, gaming tournaments, and cultural performances.",
+    // },
+    // {
+    //   icon: Zap,
+    //   title: "Energy",
+    //   description: "High-octane competitions, adrenaline-pumping challenges, and electrifying entertainment.",
+    // },
   ];
 
   return (
@@ -34,20 +34,20 @@ const About = () => {
         {/* Section Header */}
         <div className="text-center mb-16 animate-slide-up">
           <div className="inline-block px-4 py-2 rounded-full bg-card/50 border border-primary/30 mb-4">
-            <span className="text-sm font-orbitron font-semibold text-primary uppercase tracking-wider">
+            {/* <span className="text-sm font-orbitron font-semibold text-primary uppercase tracking-wider">
               About the Event
-            </span>
+            </span> */}
           </div>
-          <h2 className="text-4xl md:text-6xl font-orbitron font-bold mb-6">
+          {/* <h2 className="text-4xl md:text-6xl font-orbitron font-bold mb-6">
             <span className="text-secondary">What is</span>{" "}
             <span className="text-primary">SPARK 2K25?</span>
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto font-exo">
+          </h2> */}
+          {/* <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto font-exo">
             SPARK 2K25 is SV College's flagship annual event that brings together the brightest minds 
             and most talented performers for an electrifying celebration of creativity, competition, and teamwork. 
             From intense gaming tournaments to challenging coding contests and captivating cultural performances, 
             SPARK offers something for everyone.
-          </p>
+          </p> */}
         </div>
 
         {/* Feature Grid */}
@@ -82,7 +82,7 @@ const About = () => {
         {/* Stats Section */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { value: "1000+", label: "Participants" },
+            { value: "5000+", label: "Participants" },
             { value: "50+", label: "Events" },
             { value: "₹5L+", label: "Prize Pool" },
             { value: "3", label: "Days of Action" },

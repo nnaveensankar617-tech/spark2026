@@ -55,7 +55,7 @@ const GalleryPage = () => {
         
         <div className="relative z-10 text-center animate-scale-in">
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-orbitron font-bold mb-6 text-glow-orange animate-glow-pulse">
-            SPARK 2K25
+            SPARK 2K26
           </h1>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-orbitron font-bold mb-6 text-secondary text-glow-cyan">
             GALLERY
@@ -201,7 +201,7 @@ const GalleryPage = () => {
               "A Celebration of Passion, Power & Play"
             </p>
             <p className="text-xl md:text-2xl text-muted-foreground mb-16 font-exo tracking-wide">
-              SPARK 2K25 Media Crew 🎥
+              SPARK 2K26 Media Crew 🎥
             </p>
             <Button
               variant="hero"

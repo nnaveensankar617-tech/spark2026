@@ -9,13 +9,13 @@ import {
 
 const Schedule = () => {
   const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
+    days: 100,
+    hours: 6,
+    minutes: 10,
+    seconds: 10,
   });
 
-  const eventDate = new Date("2025-03-15T09:00:00");
+  const eventDate = new Date("2026-03-15T09:00:00");
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -38,7 +38,7 @@ const Schedule = () => {
   const scheduleData = [
     {
       day: "Day 1",
-      date: "March 15, 2025",
+      date: "March 15, 2026",
       events: [
         { time: "09:00 AM", title: "Opening Ceremony", location: "Main Auditorium" },
         { time: "11:00 AM", title: "BGMI Tournament - Round 1", location: "Gaming Arena" },
@@ -49,7 +49,7 @@ const Schedule = () => {
     },
     {
       day: "Day 2",
-      date: "March 16, 2025",
+      date: "March 16, 2026",
       events: [
         { time: "09:00 AM", title: "Hackathon Kickoff", location: "Innovation Hub" },
         { time: "11:00 AM", title: "Valorant Championship", location: "Gaming Arena" },
@@ -60,7 +60,7 @@ const Schedule = () => {
     },
     {
       day: "Day 3",
-      date: "March 17, 2025",
+      date: "March 17, 2026",
       events: [
         { time: "09:00 AM", title: "Finals - All Events", location: "Various Venues" },
         { time: "02:00 PM", title: "Cultural Grand Finale", location: "Main Stage" },

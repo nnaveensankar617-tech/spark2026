@@ -19,7 +19,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroBattlefield}
-          alt="SPARK 2K25 Battlefield"
+          alt="SPARK 2K26 Battlefield"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
@@ -57,7 +57,7 @@ const Hero = () => {
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-orbitron font-black mb-6 animate-float">
             <span className="text-glow-cyan">SPARK</span>
             <br />
-            <span className="text-glow-orange text-primary">2K25</span>
+            <span className="text-glow-orange text-primary">2K26</span>
           </h1>
 
           {/* Tagline */}

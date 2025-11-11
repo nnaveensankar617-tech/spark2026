@@ -117,7 +117,7 @@ const RegistrationPage = () => {
             <span className="text-foreground">BATTLE</span>
           </h1>
           <p className="text-xl md:text-2xl font-exo text-muted-foreground max-w-2xl mx-auto">
-            Register now and claim your spot in SPARK 2K25
+            Register now and claim your spot in SPARK 2K26
           </p>
         </div>
       </section>

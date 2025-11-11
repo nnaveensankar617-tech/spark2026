@@ -81,10 +81,10 @@ const AboutPage = () => {
             </div>
             <h1 className="text-5xl md:text-7xl font-orbitron font-bold mb-6">
               <span className="text-secondary text-glow-cyan">What is</span>{" "}
-              <span className="text-primary">SPARK 2K25?</span>
+              <span className="text-primary">SPARK 2K26?</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto font-exo leading-relaxed">
-              SPARK 2K25 is SV College's flagship annual event that brings together the brightest minds 
+              SPARK 2K26 is SV College's flagship annual event that brings together the brightest minds 
               and most talented performers for an electrifying celebration of creativity, competition, and teamwork. 
               From intense gaming tournaments to challenging coding contests and captivating cultural performances, 
               SPARK offers something for everyone.
@@ -133,7 +133,7 @@ const AboutPage = () => {
               Our <span className="text-secondary text-glow-cyan">Core Values</span>
             </h2>
             <p className="text-muted-foreground font-exo max-w-2xl mx-auto">
-              The principles that drive SPARK 2K25 and make it an extraordinary experience
+              The principles that drive SPARK 2K26 and make it an extraordinary experience
             </p>
           </div>
 
@@ -171,7 +171,7 @@ const AboutPage = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-orbitron font-bold mb-4">
-              Why <span className="text-secondary text-glow-cyan">SPARK 2K25</span>?
+              Why <span className="text-secondary text-glow-cyan">SPARK 2K26</span>?
             </h2>
             <p className="text-muted-foreground font-exo max-w-2xl mx-auto">
               Experience the ultimate celebration of talent, technology, and entertainment
@@ -223,7 +223,7 @@ const AboutPage = () => {
                 </h2>
                 <p className="text-lg text-muted-foreground font-exo leading-relaxed mb-6">
                   To create an ecosystem where creativity meets competition, where innovation thrives, 
-                  and where every participant walks away with memories that last a lifetime. SPARK 2K25 
+                  and where every participant walks away with memories that last a lifetime. SPARK 2K26 
                   is more than just an event—it's a movement that celebrates the spirit of youth, 
                   the power of technology, and the beauty of collaboration.
                 </p>
