@@ -145,7 +145,7 @@ const Footer = () => {
         {[...Array(30)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-0.5 h-0.5 bg-primary rounded-full animate-spark-trail"
+            className="absolute w-2 h-2 bg-primary rounded-full animate-spark-trail"
             style={{
               left: `${Math.random() * 100}%`,
               bottom: `${Math.random() * 100}%`,

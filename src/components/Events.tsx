@@ -5,7 +5,7 @@ const Events = () => {
   const eventCategories = [
     {
       icon: Gamepad2,
-      title: "Gaming Tournaments",
+      title: "Sport Tournaments",
       description: "BGMI, Valorant, FIFA, and more competitive gaming battles",
       events: ["BGMI Championship", "Valorant Strike", "FIFA League", "Chess Arena"],
       color: "primary",

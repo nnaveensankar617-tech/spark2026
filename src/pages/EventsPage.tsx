@@ -15,13 +15,13 @@ interface Event {
   id: string;
   name: string;
   code: string;
-  category: "Technical" | "Cultural" | "Sports" | "Workshop";
+  category: "Technical" | "Cultural" | "Sports" | "Fun Events";
   date: string;
   entryFee: string;
   poster: string;
   prizes: string;
   rules: string[];
-  type: "Individual" | "Team" | "Individual / Team" | "Individual/ Duo / Team ";
+  type: "Individual" | "Team" | "Team Men" | "Singles Men" |"Singles Women" | "Team Women" | "Individual / Team" | "Single/Doubles Men" | "Single/Doubles Women"| "Individual/ Duo / Team ";
 }
 
 const EventsPage = () => {
@@ -29,7 +29,7 @@ const EventsPage = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
 
-  const categories = ["All", "Technical", "Cultural", "Sports", "Workshop"];
+  const categories = ["All", "Technical", "Cultural", "Sports", "Fun Events",];
 
   const events: Event[] = [
     {
@@ -47,27 +47,225 @@ const EventsPage = () => {
         "Use any programming language",
         "No external help allowed",
       ],
-      type: "Team",
+      type: "Team Men",
     },
     {
-      id: "2",
-      name: "BGMI Championship",
-      code: "SPT001",
-      category: "Sports",
-      date: "March 16, 2025",
-      entryFee: "₹400",
-      poster: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800",
-      prizes: "1st: ₹25,000 | 2nd: ₹15,000 | 3rd: ₹8,000",
-      rules: [
-        "Squad of 4 players",
-        "Classic mode - Erangel",
-        "3 rounds - top 16 advance",
-        "Kill points + placement points",
-      ],
-      type: "Team",
-    },
+    id: "2",
+    name: "Cricket Men",
+    code: "SPT002",
+    category: "Sports",
+    date: "",
+    entryFee: "₹3000",
+    poster: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800",
+    prizes: "1st: ₹20,000 | 2nd: ₹10,000",
+    rules: [
+      "Team Composition: 11 players on field + 4 substitutes",
+      "Match Format: 8–10 overs per side, max 2 overs per bowler",
+      "Toss decides batting/fielding",
+      "Free hit for no-ball; tie → Super Over",
+      "Ball: Tennis or soft ball",
+      "Umpire’s decision final; misconduct = disqualification"
+    ],
+    type: "Team Men"
+  },
+  {
+    id: "3",
+    name: "Kabaddi Men",
+    code: "SPT003",
+    category: "Sports",
+    date: "",
+    entryFee: "₹2000",
+    poster: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800",
+    prizes: "1st: ₹8,000 | 2nd: ₹4,000",
+    rules: [
+      "2 halves of 20 mins, 5-min halftime",
+      "1 point per touch; all-out = 2 bonus pts; bonus line = extra point",
+      "Raid Rules: Chant 'Kabaddi' continuously; 30 secs per raid",
+      "Out if touched/caught/steps out; revive 1 player per point",
+      "Umpire’s decision final; misconduct = disqualification"
+    ],
+    type: "Team Men"
+  },
+  {
+    id: "4",
+    name: "Volleyball Men",
+    code: "SPT004",
+    category: "Sports",
+    date: "",
+    entryFee: "₹2000",
+    poster: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800",
+    prizes: "1st: ₹8,000 | 2nd: ₹4,000",
+    rules: [
+      "Best of 3 sets (25 points, rally scoring)",
+      "Max 3 touches; no net touch or crossing line",
+      "Serve from behind baseline",
+      "Ball: Leather/Synthetic (size 4/5)",
+      "Referee’s decision final; unsporting behavior = disqualification"
+    ],
+    type: "Team Men"
+  },
+  {
+    id: "5",
+    name: "Chess Men",
+    code: "SPT005",
+    category: "Sports",
+    date: "",
+    entryFee: "₹200",
+    poster: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800",
+    prizes: "1st: ₹1,000 | 2nd: ₹500",
+    rules: [
+      "Individual (Swiss/Knockout), 15 minutes per player",
+      "FIDE rules apply",
+      "Illegal move = warning → loss",
+      "Silence required; mobile use = disqualification"
+    ],
+    type: "Singles Men"
+  },
+  {
+    id: "6",
+    name: "Carroms Men",
+    code: "SPT006",
+    category: "Sports",
+    date: "",
+    entryFee: "₹200",
+    poster: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800",
+    prizes: "1st: ₹1,000 | 2nd: ₹500",
+    rules: [
+      "Singles/Doubles, best of 3 boards",
+      "Queen = 5 pts (must cover)",
+      "First to 25 pts or 2 boards wins",
+      "Standard striker only; alternate breaks",
+      "Foul = return one coin + lose turn"
+    ],
+    type: "Single/Doubles Men"
+  },
+  {
+    id: "7",
+    name: "Table Tennis Men",
+    code: "SPT007",
+    category: "Sports",
+    date: "",
+    entryFee: "₹300",
+    poster: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800",
+    prizes: "1st: ₹1,000 | 2nd: ₹700",
+    rules: [
+      "Singles (Best of 5 games)",
+      "Each game to 11 points, win by 2",
+      "2 serves alternately; ball bounces once on both sides",
+      "Rally point scoring",
+      "Standard ITTF rules apply"
+    ],
+    type: "Singles Men"
+  },
+  {
+    id: "8",
+    name: "Throwball Women",
+    code: "SPT008",
+    category: "Sports",
+    date: "",
+    entryFee: "₹1500",
+    poster: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800",
+    prizes: "1st: ₹5,000 | 2nd: ₹2,500",
+    rules: [
+      "Team of 7 on court + 5 substitutes",
+      "Best of 3 sets to 25 points (win by 2)",
+      "Catch cleanly, throw within 3 seconds",
+      "No double touch or holding",
+      "Umpire’s decision final"
+    ],
+    type: "Team Women"
+  },
+  {
+    id: "9",
+    name: "Kabaddi Women",
+    code: "SPT009",
+    category: "Sports",
+    date: "",
+    entryFee: "₹1500",
+    poster: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800",
+    prizes: "1st: ₹6,000 | 2nd: ₹3,000",
+    rules: [
+      "2 halves of 20 mins, 5-min halftime",
+      "1 point per touch; all-out = 2 bonus pts",
+      "Raid Rules: Chant 'Kabaddi' continuously; 30 secs per raid",
+      "Out if touched/caught/steps out; revive 1 player per point",
+      "Umpire’s decision final"
+    ],
+    type: "Team Women"
+  },
+  {
+    id: "10",
+    name: "Volleyball Women",
+    code: "SPT010",
+    category: "Sports",
+    date: "",
+    entryFee: "₹1500",
+    poster: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800",
+    prizes: "1st: ₹6,000 | 2nd: ₹3,000",
+    rules: [
+      "Best of 3 sets (25 points, rally scoring)",
+      "Max 3 touches; no net touch or crossing line",
+      "Serve from behind baseline",
+      "Ball: Leather/Synthetic (size 4/5)",
+      "Referee’s decision final"
+    ],
+    type: "Team Women"
+  },
+  {
+    id: "11",
+    name: "Chess Women",
+    code: "SPT011",
+    category: "Sports",
+    date: "",
+    entryFee: "₹200",
+    poster: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800",
+    prizes: "1st: ₹1,000 | 2nd: ₹500",
+    rules: [
+      "Individual (Swiss/Knockout), 15 minutes per player",
+      "FIDE rules apply",
+      "Illegal move = warning → loss",
+      "Silence required; mobile use = disqualification"
+    ],
+    type: "Singles Women"
+  },
+  {
+    id: "12",
+    name: "Carroms Women",
+    code: "SPT012",
+    category: "Sports",
+    date: "",
+    entryFee: "₹200",
+    poster: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800",
+    prizes: "1st: ₹1,000 | 2nd: ₹500",
+    rules: [
+      "Singles/Doubles, best of 3 boards",
+      "Queen = 5 pts (must cover)",
+      "First to 25 pts or 2 boards wins",
+      "Standard striker only; alternate breaks",
+      "Foul = return one coin + lose turn"
+    ],
+    type: "Single/Doubles Women"
+  },
+  {
+    id: "13",
+    name: "Tennicoit Women",
+    code: "SPT013",
+    category: "Sports",
+    date: "",
+    entryFee: "₹200",
+    poster: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800",
+    prizes: "1st: ₹800 | 2nd: ₹500",
+    rules: [
+      "Singles (1 vs 1)",
+      "Underhand serve; ring must pass cleanly over net",
+      "Ring outside or double touch = fault",
+      "Best of 3 sets, up to 21 points (win by 2)",
+      "Umpire’s decision final"
+    ],
+    type: "Singles Women"
+  },
     {
-      id: "3",
+      id: "14",
       name: "MUSICON",
       code: "CUL001",
       category: "Cultural",
@@ -84,10 +282,10 @@ const EventsPage = () => {
       type: "Individual/ Duo / Team ",
     },
     {
-      id: "4",
+      id: "15",
       name: "AI Workshop",
       code: "WRK001",
-      category: "Workshop",
+      category: "Fun Events",
       date: "March 18, 2025",
       entryFee: "₹150",
       poster: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
@@ -101,7 +299,7 @@ const EventsPage = () => {
       type: "Individual",
     },
     {
-      id: "5",
+      id: "16",
       name: "Web Warriors",
       code: "TEC002",
       category: "Technical",
@@ -118,7 +316,7 @@ const EventsPage = () => {
       type: "Team",
     },
     {
-      id: "6",
+      id: "17",
       name: "Dance off",
       code: "CUL002",
       category: "Cultural",
@@ -135,7 +333,7 @@ const EventsPage = () => {
       type: "Individual / Team",
     },
     {
-      id: "7",
+      id: "18",
       name: "Art Gallery",
       code: "CUL002",
       category: "Cultural",
