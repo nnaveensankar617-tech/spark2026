@@ -7,6 +7,7 @@ import Schedule from "@/components/Schedule";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import SparkEffect from "@/components/SparkEffect";
+import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 
 const Index = () => {
   return (
@@ -15,11 +16,22 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
-        <About />
-        <Events />
-        <Gallery />
-        <Schedule />
-        <Contact />
+
+        <RevealOnScroll width="100%">
+          <About />
+        </RevealOnScroll>
+
+        <RevealOnScroll width="100%">
+          <Events />
+        </RevealOnScroll>
+
+        <RevealOnScroll width="100%">
+          <Gallery />
+        </RevealOnScroll>
+
+        <RevealOnScroll width="100%">
+          <Contact />
+        </RevealOnScroll>
       </main>
       <Footer />
     </div>

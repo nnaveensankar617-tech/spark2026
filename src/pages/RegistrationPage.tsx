@@ -1,308 +1,220 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
+import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SparkEffect from "@/components/SparkEffect";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import Hero from "@/components/demohero";
-
-
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import battlefieldBg from "@/assets/hero-battlefield.jpg";
-
-const formSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  phone: z.string().regex(/^[0-9]{10}$/, "Phone number must be 10 digits"),
-  email: z.string().email("Invalid email address"),
-  event: z.string().min(1, "Please select an event"),
-  participationType: z.string().min(1, "Please select participation type"),
-  teamName: z.string().optional(),
-  teamSize: z.string().optional(),
-});
-
-type FormData = z.infer<typeof formSchema>;
-
-interface EventType {
-  name: string;
-  participationTypes: string[];
-}
-
-const events: EventType[] = [
-  { name: "BGMI Tournament", participationTypes: ["Squad (4 players)", "Duo (2 players)"] },
-  { name: "Free Fire", participationTypes: ["Squad (4 players)", "Solo"] },
-  { name: "Valorant", participationTypes: ["Team (5 players)"] },
-  { name: "Chess", participationTypes: ["Solo"] },
-  { name: "Dance Battle", participationTypes: ["Solo", "Duo (2 dancers)", "Group (4-8 dancers)"] },
-  { name: "Singing Competition", participationTypes: ["Solo", "Duet"] },
-  { name: "Fashion Show", participationTypes: ["Solo", "Team (6-10 models)"] },
-  { name: "Hackathon", participationTypes: ["Solo", "Team (2-4 members)"] },
-  { name: "Robo War", participationTypes: ["Team (2-3 members)"] },
-  { name: "Photography Contest", participationTypes: ["Solo"] },
-];
+import { Check, Crown, Zap, Shield, Swords } from "lucide-react";
 
 const RegistrationPage = () => {
   const { toast } = useToast();
-  const [selectedEvent, setSelectedEvent] = useState<EventType | null>(null);
-  const [selectedParticipationType, setSelectedParticipationType] = useState("");
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    setValue,
-    watch,
-  } = useForm<FormData>({
-    resolver: zodResolver(formSchema),
-  });
-
-  const watchEvent = watch("event");
-  const watchParticipationType = watch("participationType");
-
-  const handleEventChange = (eventName: string) => {
-    const event = events.find((e) => e.name === eventName);
-    setSelectedEvent(event || null);
-    setSelectedParticipationType("");
-    setValue("event", eventName);
-    setValue("participationType", "");
-  };
-
-  const handleParticipationTypeChange = (type: string) => {
-    setSelectedParticipationType(type);
-    setValue("participationType", type);
-  };
-
-  const requiresTeamInfo = selectedParticipationType && !selectedParticipationType.includes("Solo");
-
-  const onSubmit = (data: FormData) => {
-    console.log("Registration Data:", data);
+  const handleRegisterClick = (plan: "normal" | "pro") => {
     toast({
-      title: "Registration Successful! 🎉",
-      description: `Welcome to ${data.event}! We'll contact you soon.`,
+      title: plan === "pro" ? "Pro Pass Selected! 👑" : "Standard Entry Selected! 🎮",
+      description: "Registration portal opening soon! Stay tuned.",
     });
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring" as const,
+        stiffness: 100,
+      },
+    },
+  };
+
   return (
-    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="fixed inset-0 z-0"
-        style={{
-          backgroundImage: `url(${battlefieldBg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-        }}
-      >
-        <div className="absolute inset-0 bg-background/95 backdrop-blur-sm" />
+    <div className="min-h-screen bg-black text-foreground relative overflow-hidden font-exo">
+      {/* Dynamic Background */}
+      <div className="fixed inset-0 z-0">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transform scale-105"
+          style={{ backgroundImage: `url(${battlefieldBg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/90" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_0%,_#000_100%)]" />
       </div>
 
-
-      <Hero />
       <SparkEffect />
-
-      
       <Navbar />
 
-     
+      <motion.main
+        className="relative z-10 container mx-auto px-4 pt-24 pb-16"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {/* Hero Section */}
+        <motion.div className="text-center mb-16 space-y-6" variants={itemVariants}>
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="inline-block"
+          >
+            <h1 className="text-3xl md:text-8xl font-orbitron font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+              JOIN THE <br />
+              <span className="text-glow-orange bg-clip-text text-transparent bg-gradient-to-r from-primary via-orange-400 to-primary">
+                REVOLUTION
+              </span>
+            </h1>
+          </motion.div>
 
-
-      {/* Hero Section */}
-      <section className="relative min-h-[40vh] flex items-center justify-center pt-24">
-        <div className="container mx-auto px-4 z-10 text-center">
-          <h1 className="text-5xl md:text-7xl font-orbitron font-bold mb-4 tracking-tight">
-            <span className="text-primary text-glow-orange">JOIN THE</span>
-            <br />
-            <span className="text-foreground">BATTLE</span>
-          </h1>
-          <p className="text-xl md:text-2xl font-exo text-muted-foreground max-w-2xl mx-auto">
-            Register now and claim your spot in SPARK 2K26
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto font-light tracking-wide">
+            Secure your legacy in SPARK 2K26. Choose your path to glory.
           </p>
-        </div>
-      </section>
+        </motion.div>
 
-      {/* Registration Form */}
-      <section className="container mx-auto px-4 py-16 relative z-10 max-w-2xl">
-        <Card className="border-2 border-primary/20 bg-card/95 backdrop-blur-md shadow-2xl">
-          <CardHeader className="space-y-2 text-center border-b border-border pb-6">
-            <CardTitle className="text-3xl font-orbitron font-bold text-primary">
-              Event Registration
-            </CardTitle>
-            <CardDescription className="text-base">
-              Fill in your details to secure your participation
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="pt-6">
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-              {/* Name Field */}
-              <div className="space-y-2">
-                <Label htmlFor="name" className="text-sm font-semibold">
-                  Full Name *
-                </Label>
-                <Input
-                  id="name"
-                  {...register("name")}
-                  placeholder="Enter your full name"
-                  className="h-12"
-                />
-                {errors.name && (
-                  <p className="text-sm text-destructive">{errors.name.message}</p>
-                )}
-              </div>
+        {/* Info Cards */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20 max-w-5xl mx-auto"
+          variants={containerVariants}
+        >
+          {[
+            { icon: Swords, title: "Elite Competition", desc: "Battle against the best in high-stakes tournaments." },
+            { icon: Zap, title: "Instant Access", desc: "Quick entry to all zones with improved check-in." },
+            { icon: Shield, title: "Secure Spot", desc: "Guaranteed participation in your chosen events." },
+          ].map((item, idx) => (
+            <motion.div
+              key={idx}
+              variants={itemVariants}
+              whileHover={{ y: -5 }}
+              className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-xl text-center hover:bg-white/10 transition-colors"
+            >
+              <item.icon className="w-10 h-10 mx-auto mb-4 text-primary" />
+              <h3 className="text-lg font-orbitron font-bold mb-2">{item.title}</h3>
+              <p className="text-sm text-muted-foreground">{item.desc}</p>
+            </motion.div>
+          ))}
+        </motion.div>
 
-              {/* Email Field */}
-              <div className="space-y-2">
-                <Label htmlFor="email" className="text-sm font-semibold">
-                  Email Address *
-                </Label>
-                <Input
-                  id="email"
-                  type="email"
-                  {...register("email")}
-                  placeholder="your.email@example.com"
-                  className="h-12"
-                />
-                {errors.email && (
-                  <p className="text-sm text-destructive">{errors.email.message}</p>
-                )}
-              </div>
-
-              {/* Phone Field */}
-              <div className="space-y-2">
-                <Label htmlFor="phone" className="text-sm font-semibold">
-                  Phone Number *
-                </Label>
-                <Input
-                  id="phone"
-                  {...register("phone")}
-                  placeholder="10-digit mobile number"
-                  maxLength={10}
-                  className="h-12"
-                />
-                {errors.phone && (
-                  <p className="text-sm text-destructive">{errors.phone.message}</p>
-                )}
-              </div>
-
-              {/* Event Selection */}
-              <div className="space-y-2">
-                <Label htmlFor="event" className="text-sm font-semibold">
-                  Select Event *
-                </Label>
-                <Select onValueChange={handleEventChange} value={watchEvent}>
-                  <SelectTrigger className="h-12">
-                    <SelectValue placeholder="Choose your event" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {events.map((event) => (
-                      <SelectItem key={event.name} value={event.name}>
-                        {event.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                {errors.event && (
-                  <p className="text-sm text-destructive">{errors.event.message}</p>
-                )}
-              </div>
-
-              {/* Participation Type (Conditional) */}
-              {selectedEvent && (
-                <div className="space-y-2 animate-fade-in">
-                  <Label htmlFor="participationType" className="text-sm font-semibold">
-                    Participation Type *
-                  </Label>
-                  <Select
-                    onValueChange={handleParticipationTypeChange}
-                    value={watchParticipationType}
-                  >
-                    <SelectTrigger className="h-12">
-                      <SelectValue placeholder="Solo, Duo, or Team?" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {selectedEvent.participationTypes.map((type) => (
-                        <SelectItem key={type} value={type}>
-                          {type}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                  {errors.participationType && (
-                    <p className="text-sm text-destructive">
-                      {errors.participationType.message}
-                    </p>
-                  )}
-                </div>
-              )}
-
-              {/* Team Information (Conditional) */}
-              {requiresTeamInfo && (
-                <div className="space-y-4 animate-fade-in border-t border-border pt-6">
-                  <h3 className="text-lg font-orbitron font-bold text-secondary">
-                    Team Details
-                  </h3>
-                  <div className="space-y-2">
-                    <Label htmlFor="teamName" className="text-sm font-semibold">
-                      Team Name *
-                    </Label>
-                    <Input
-                      id="teamName"
-                      {...register("teamName")}
-                      placeholder="Enter your team name"
-                      className="h-12"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="teamSize" className="text-sm font-semibold">
-                      Number of Members *
-                    </Label>
-                    <Input
-                      id="teamSize"
-                      type="number"
-                      {...register("teamSize")}
-                      placeholder="Total team members"
-                      className="h-12"
-                    />
-                  </div>
-                </div>
-              )}
-
-              {/* Submit Button */}
-              <Button
-                type="submit"
-                variant="hero"
-                size="lg"
-                className="w-full h-14 text-lg font-orbitron font-bold mt-8"
-              >
-                Complete Registration
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
-
-        {/* Info Section */}
-        <div className="mt-8 text-center space-y-4">
-          <p className="text-sm text-muted-foreground">
-            Registration is completely free for all events
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center text-xs text-muted-foreground">
-            <span>✓ Instant confirmation</span>
-            <span>✓ Event updates via email</span>
-            <span>✓ Certificate of participation</span>
+        {/* Pricing Section */}
+        <motion.div className="max-w-5xl mx-auto" variants={itemVariants}>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-orbitron font-bold mb-4 text-white">
+              SELECT YOUR <span className="text-primary">PASS</span>
+            </h2>
           </div>
-        </div>
-      </section>
+          <br /><br />
+
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Normal Pass */}
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="relative group"
+            >
+              <div className="absolute inset-0 bg-primary/20 blur-xl rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <Card className="relative bg-black/40 backdrop-blur-xl border border-white/10 p-8 rounded-3xl overflow-hidden h-full flex flex-col items-start transition-all duration-300 group-hover:border-primary/50">
+                <div className="mb-6">
+                  <h3 className="text-2xl font-orbitron font-bold text-white mb-2">SCOUT PASS</h3>
+                  <div className="text-5xl font-bold text-white mb-1">FREE</div>
+                  <p className="text-muted-foreground text-sm">Standard Entry Access</p>
+                </div>
+
+                <ul className="space-y-4 mb-8 flex-1 w-full">
+                  {["Tournament Entry", "Digital Certificate", "Standard Support", "Community Access"].map((feat, i) => (
+                    <li key={i} className="flex items-center gap-3 text-sm text-gray-300">
+                      <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                        <Check className="w-3 h-3 text-primary" />
+                      </div>
+                      {feat}
+                    </li>
+                  ))}
+                </ul>
+
+                <Button
+                  onClick={() => handleRegisterClick("normal")}
+                  className="w-full bg-white/10 hover:bg-white/20 text-white font-orbitron h-12 border-0"
+                >
+                  GET STARTED
+                </Button>
+              </Card>
+            </motion.div>
+
+            {/* Pro Pass */}
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              className="relative group md:-mt-8 md:mb-8"
+            >
+              <div className="absolute inset-0 bg-yellow-500/30 blur-2xl rounded-3xl opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-500 text-black font-orbitron font-bold px-4 py-1 rounded-full text-sm z-20 shadow-[0_0_20px_rgba(234,179,8,0.5)]">
+                MOST POPULAR
+              </div>
+
+              <Card className="relative bg-black/60 backdrop-blur-xl border border-yellow-500/50 p-8 rounded-3xl overflow-hidden h-full flex flex-col items-start shadow-2xl z-10">
+                {/* Background Glow */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+
+                <div className="mb-6 relative w-full">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h3 className="text-2xl font-orbitron font-bold text-yellow-500 mb-2 flex items-center gap-2">
+                        ELITE PASS <Crown className="w-5 h-5 fill-yellow-500" />
+                      </h3>
+                      <div className="text-5xl font-bold text-white mb-1 flex items-end gap-2">
+                        $50 <span className="text-base text-muted-foreground font-normal mb-2">/ event</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-yellow-200/60 text-sm mt-2">Maximum Experience</p>
+                </div>
+
+                <ul className="space-y-4 mb-8 flex-1 w-full relative">
+                  {[
+                    "Priority Check-in",
+                    "Premium Swag Kit",
+                    "VIP Lounge Access",
+                    "All-Day Catering",
+                    "Exclusive After-Party",
+                    "Meet & Greet Access"
+                  ].map((feat, i) => (
+                    <li key={i} className="flex items-center gap-3 text-sm text-white font-medium">
+                      <div className="w-6 h-6 rounded-full bg-yellow-500/20 flex items-center justify-center shrink-0">
+                        <Check className="w-3 h-3 text-yellow-500" />
+                      </div>
+                      {feat}
+                    </li>
+                  ))}
+                </ul>
+
+                <Button
+                  onClick={() => handleRegisterClick("pro")}
+                  className="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-400 hover:to-yellow-500 text-black font-bold font-orbitron h-14 text-lg shadow-[0_0_20px_rgba(234,179,8,0.3)] hover:shadow-[0_0_30px_rgba(234,179,8,0.5)] transition-all"
+                >
+                  JOIN ELITE SQUAD
+                </Button>
+              </Card>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Footer Text */}
+        <motion.div
+          className="mt-16 text-center"
+          variants={itemVariants}
+        >
+          <p className="text-muted-foreground/50 text-sm">
+            By registering, you agree to our Terms of Service & Privacy Policy.
+          </p>
+        </motion.div>
+      </motion.main>
 
       <Footer />
     </div>
