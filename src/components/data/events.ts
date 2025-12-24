@@ -372,7 +372,7 @@ export const events: Event[] = [
   },
   {
     id: "15",
-    title: "Coding Quiz – CSM",
+    title: "AGENTIX",
     description: "",
     date: "",
     dateTag: "6 Mar",
@@ -380,7 +380,7 @@ export const events: Event[] = [
     venue: "",
     categories: ["Technical Events", "Hackathons"],
     department: "CSM",
-    image: "/event-images/sample.png",
+    image: "/event-images/AGENTIX.jpg",
     registrationOpen: true,
     teamSize: "2 members",
     rules: [
@@ -392,15 +392,15 @@ export const events: Event[] = [
   },
   {
     id: "16",
-    title: "PPT Presentation (CSD)",
+    title: "SENSECRAFT",
     description: "",
     date: "",
     dateTag: "6 Mar",
     time: "",
     venue: "",
-    categories: ["Technical Events", "PPT Presentation"],
+    categories: ["Technical Events", "Hackathons"],
     department: "CSD",
-    image: "/event-images/sample.png",
+    image: "/event-images/SENSECRAFT.jpg",
     registrationOpen: true,
     teamSize: "2–4 members",
     rules: [
@@ -413,15 +413,15 @@ export const events: Event[] = [
 
   {
     id: "17",
-    title: "Poster Presentation (CSD)",
+    title: "WEBVERSE",
     description: "",
     date: "",
     dateTag: "6 Mar",
     time: "",
     venue: "",
-    categories: ["Technical Events", "Poster Presentation"],
+    categories: ["Technical Events", "Hackathons"],
     department: "CSD",
-    image: "/event-images/sample.png",
+    image: "/event-images/WEBVERSE.jpg",
     registrationOpen: true,
     teamSize: "2 members",
     rules: [

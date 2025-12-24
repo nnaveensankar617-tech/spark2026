@@ -44,8 +44,8 @@ const Navbar = () => {
       return;
     }
 
-    if (id === "schedule-page") {
-      navigate("/schedule");
+    if (id === "highlights-page") {
+      navigate("/highlights");
       setIsOpen(false);
       return;
     }
@@ -80,7 +80,7 @@ const Navbar = () => {
     { name: "About", id: "about-page" },
     { name: "Events", id: "events-page" },
     { name: "Gallery", id: "gallery-page" },
-    { name: "Schedule", id: "schedule-page" },
+    { name: "Highlights", id: "highlights-page" },
     { name: "Contact", id: "contact-page" },
     { name: "Sponsors", id: "sponsors-page" },
   ];

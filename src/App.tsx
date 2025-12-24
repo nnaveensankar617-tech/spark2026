@@ -8,11 +8,11 @@ import Index from "./pages/Index";
 import EventsPage from "./pages/EventsPage";
 import GalleryPage from "./pages/GalleryPage";
 import SponsorsPage from "./pages/SponsorsPage";
-import SchedulePage from "./pages/SchedulePage";
-import ContactPage from "./pages/ContactPage";
+import HighlightsPage from "./pages/Highlights";
 import AboutPage from "./pages/AboutPage";
 import RegistrationPage from "./pages/RegistrationPage";
 import EventDetail from "./pages/EventDetail";
+import ProshowPage from "./pages/ProshowPage";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ui/ScrollToTop";
 
@@ -33,11 +33,11 @@ const App = () => {
           <Route path="/events" element={<EventsPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/sponsors" element={<SponsorsPage />} />
-          <Route path="/schedule" element={<SchedulePage />} />
-          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/highlights" element={<HighlightsPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/register" element={<RegistrationPage />} />
           <Route path="/event/:id" element={<EventDetail />} />
+          <Route path="/proshow" element={<ProshowPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
