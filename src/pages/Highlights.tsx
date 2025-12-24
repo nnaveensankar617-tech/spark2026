@@ -72,129 +72,133 @@ const HighlightsPage: React.FC = () => {
   const location = useLocation();
   return (
     <>
-    <SmoothScroll>
-      <>
-        <div className="fixed top-0 left-0 right-0 z-[1000]">
-          <PillNav
-            logo={Logo}
-            logoAlt="spark Logo"
-            items={[
-              { label: "Gallery", href: "/highlights" },
-              { label: "Proshow", href: "/proshow" },
-              { label: "Team", href: "/team" },
-              { label: "Register", href: "/register" },
-            ]}
-            activeHref="/highlights"
-            className="custom-nav"
-            ease="power2.easeOut"
-            baseColor="#040204ff"
-            pillColor="linear-gradient(130deg, #b510ebff, #f81184ff)"
-            hoveredPillTextColor="#fbfbfbff"
-            pillTextColor="#faf3f3ff" />
-        </div>
+      <SmoothScroll>
+        <>
+          <div className="fixed top-0 left-0 right-0 z-[1000]">
+            <PillNav
+              logo={Logo}
+              logoAlt="spark Logo"
+              items={[
+                { label: "Home", href: "/" },
+                { label: "About", href: "/about" },
+                { label: "Events", href: "/events" },
+                { label: "Gallery", href: "/gallery" },
+                { label: "Sponsors", href: "/sponsors" },
+                { label: "Proshow", href: "/proshow" },
+                { label: "Team", href: "/team" },
+                { label: "Register", href: "/register" },
+              ]}
+              activeHref="/highlights"
+              className="custom-nav"
+              ease="power2.easeOut"
+              baseColor="#040204ff"
+              pillColor="linear-gradient(130deg, #b510ebff, #f81184ff)"
+              hoveredPillTextColor="#fbfbfbff"
+              pillTextColor="#faf3f3ff" />
+          </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-          className="min-h-screen text-white relative overflow-x-hidden bg-black selection:bg-pink-500/30"
-        >
-          {/* Background elements with smooth entry */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.5 }}
-            className="fixed inset-0 z-0"
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="min-h-screen text-white relative overflow-x-hidden bg-black selection:bg-pink-500/30"
           >
-            <BeamsBackground />
+            {/* Background elements with smooth entry */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.5 }}
+              className="fixed inset-0 z-0"
+            >
+              <BeamsBackground />
+            </motion.div>
+
+            <div className="w-full">
+              {/* 🔹 Video Section */}
+
+              <div className="absolute inset-0 bg-black/40" />
+
+              <div className="relative z-10 flex h-full items-center justify-center">
+                {/* Nav was here */}
+              </div>
+            </div>
+
+
+
+            <div className="relative z-10">
+              <section>
+                <HeroParallax products={products} />
+              </section>
+
+              {/* Featured Highlights Section */}
+              <motion.section
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="min-h-[80vh] flex flex-col justify-center py-20 relative"
+              >
+                {/* Decorative side line */}
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-32 bg-gradient-to-b from-transparent via-cyan-500 to-transparent opacity-50" />
+
+                <h2 className="text-4xl md:text-6xl font-orbitron font-black text-center mb-4 tracking-widest bg-gradient-to-r from-pink-600 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(236,72,153,0.3)]">
+                  HIGHLIGHTS
+                </h2>
+
+                <div className="h-[60vh] w-full">
+                  <CircularGallery items={galleryItems} />
+                </div>
+              </motion.section>
+
+              {/* Previous Year Section */}
+              <motion.section
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
+                className="py-20 bg-gradient-to-b from-transparent via-black/40 to-transparent backdrop-blur-sm"
+              >
+                <PreviousYear />
+              </motion.section>
+
+              {/* BTS Section */}
+              <motion.section
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="py-20 min-h-[80vh] flex flex-col justify-center relative"
+              >
+                {/* Decorative side line */}
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-32 bg-gradient-to-b from-transparent via-pink-500 to-transparent opacity-50" />
+
+                <h2 className="text-4xl md:text-6xl font-orbitron font-black text-center mb-4 tracking-widest bg-gradient-to-r from-[#FF1493] to-blue-600 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(255,20,147,0.5)]">
+                  BEHIND THE SCENES
+                </h2>
+
+                <CircularTestimonials
+                  testimonials={btsTestimonials}
+                  colors={{
+                    name: "#FFF",
+                    designation: "#22d3ee", // cyan-400
+                    testimony: "#e5e7eb", // gray-200
+                    arrowBackground: "rgba(255,255,255,0.05)",
+                    arrowForeground: "#FFF",
+                    arrowHoverBackground: "#db2777", // pink-600
+                  }}
+                />
+              </motion.section>
+            </div>
           </motion.div>
 
-          <div className="w-full">
-            {/* 🔹 Video Section */}
 
-            <div className="absolute inset-0 bg-black/40" />
+        </>
 
-            <div className="relative z-10 flex h-full items-center justify-center">
-              {/* Nav was here */}
-            </div>
-          </div>
+      </SmoothScroll>
+      <Footer />
 
-
-
-          <div className="relative z-10">
-            <section>
-              <HeroParallax products={products} />
-            </section>
-
-            {/* Featured Highlights Section */}
-            <motion.section
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="min-h-[80vh] flex flex-col justify-center py-20 relative"
-            >
-              {/* Decorative side line */}
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-32 bg-gradient-to-b from-transparent via-cyan-500 to-transparent opacity-50" />
-
-              <h2 className="text-4xl md:text-6xl font-orbitron font-black text-center mb-4 tracking-widest bg-gradient-to-r from-pink-600 to-cyan-400 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(236,72,153,0.3)]">
-                HIGHLIGHTS
-              </h2>
-
-              <div className="h-[60vh] w-full">
-                <CircularGallery items={galleryItems} />
-              </div>
-            </motion.section>
-
-            {/* Previous Year Section */}
-            <motion.section
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1 }}
-              className="py-20 bg-gradient-to-b from-transparent via-black/40 to-transparent backdrop-blur-sm"
-            >
-              <PreviousYear />
-            </motion.section>
-
-            {/* BTS Section */}
-            <motion.section
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="py-20 min-h-[80vh] flex flex-col justify-center relative"
-            >
-              {/* Decorative side line */}
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-32 bg-gradient-to-b from-transparent via-pink-500 to-transparent opacity-50" />
-
-              <h2 className="text-4xl md:text-6xl font-orbitron font-black text-center mb-4 tracking-widest bg-gradient-to-r from-[#FF1493] to-blue-600 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(255,20,147,0.5)]">
-                BEHIND THE SCENES
-              </h2>
-
-              <CircularTestimonials
-                testimonials={btsTestimonials}
-                colors={{
-                  name: "#FFF",
-                  designation: "#22d3ee", // cyan-400
-                  testimony: "#e5e7eb", // gray-200
-                  arrowBackground: "rgba(255,255,255,0.05)",
-                  arrowForeground: "#FFF",
-                  arrowHoverBackground: "#db2777", // pink-600
-                }}
-              />
-            </motion.section>
-          </div>
-        </motion.div>
-        
-
-      </>
-      
-    </SmoothScroll>
-    <Footer />
-
-</>
+    </>
 
 
 

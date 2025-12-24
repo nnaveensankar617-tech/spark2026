@@ -29,82 +29,86 @@ const Proshow: React.FC = () => {
         />
 
         {/* <div className="relative z-10 flex justify-center items-center h-full "> */}
-          <PillNav
-          // logo={Logo}
-          // logoAlt="spark Logo"
-            items={[
-              { label: "Gallery", href: "/highlights" },
-              { label: "Proshow", href: "/proshow" },
-              { label: "Team", href: "/team" },
-              { label: "Register", href: "/register" },
-            ]}
-            activeHref="/"
-            className="custom-nav"
-            ease="power2.easeOut"
-            baseColor='#01102bff'
-            pillColor="linear-gradient(130deg, #b510ebff, #f81184ff)"
-            hoveredPillTextColor="#fbfbfbff"
-            pillTextColor="#faf3f3ff"
+        <PillNav
+          logo={Logo}
+          logoAlt="spark Logo"
+          items={[
+            { label: "Home", href: "/" },
+            { label: "About", href: "/about" },
+            { label: "Events", href: "/events" },
+            { label: "Gallery", href: "/gallery" },
+            { label: "Sponsors", href: "/sponsors" },
+            { label: "Proshow", href: "/proshow" },
+            { label: "Team", href: "/team" },
+            { label: "Register", href: "/register" },
+          ]}
+          activeHref="/"
+          className="custom-nav"
+          ease="power2.easeOut"
+          baseColor='#01102bff'
+          pillColor="linear-gradient(130deg, #b510ebff, #f81184ff)"
+          hoveredPillTextColor="#fbfbfbff"
+          pillTextColor="#faf3f3ff"
 
-          />
-           <div className="absolute inset-0 bg-black/50 z-10" />
+        />
+        <div className="absolute inset-0 bg-black/50 z-10" />
 
-  {/* ✨ Text Content */}
-  <div className="relative z-20 flex items-center justify-center h-full text-center px-4">
-    <div>
-      <ScrollAnimate>
-      <h1 className="text-white text-6xl font-extrabold drop-shadow-[0_0_25px_#ec4899]">
-        FEEL THE RHYTHM
-      </h1>
-      </ScrollAnimate>
-      <p></p>
-      <ScrollAnimate direction="right">
-      <h3 className="text-white text-1xl md:text-3xl font-extrabold tracking-wide">
-        Lose Yourself in the Sound
-      </h3>
-      </ScrollAnimate>
-      <p className="mt-6 text-white text-lg md:text-2xl">
-        Music That Moves Every Heart
-      </p>
-      <p className="mt-4 text-white/90 text-lg md:text-2xl">
-        This Is Where Memories Are Made.
-      </p>
-    </div>
-  </div>
+        {/* ✨ Text Content */}
+        <div className="relative z-20 flex items-center justify-center h-full text-center px-4">
+          <div>
+            <ScrollAnimate>
+              <h1 className="text-white text-6xl font-extrabold drop-shadow-[0_0_25px_#ec4899]">
+                FEEL THE RHYTHM
+              </h1>
+            </ScrollAnimate>
+            <p></p>
+            <ScrollAnimate direction="right">
+              <h3 className="text-white text-1xl md:text-3xl font-extrabold tracking-wide">
+                Lose Yourself in the Sound
+              </h3>
+            </ScrollAnimate>
+            <p className="mt-6 text-white text-lg md:text-2xl">
+              Music That Moves Every Heart
+            </p>
+            <p className="mt-4 text-white/90 text-lg md:text-2xl">
+              This Is Where Memories Are Made.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* 🔆 LIGHT RAYS + CARD SECTION */}
       <section
-  className="relative w-full min-h-[50vh] overflow-hidden bg-cover bg-center bg-black"
-  // style={{ backgroundImage: `url(${bgImage})` }}
->
-  <AnimatedGridPattern
-        numSquares={50}
-        maxOpacity={1.5}
-        duration={1}
-        repeatDelay={0.5}
-        className={cn(
-          // "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
-          "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
-        )}
-      />
-  {/* Optional overlay for readability */}
-  <div className="absolute inset-0  z-0" />
-  
+        className="relative w-full min-h-[50vh] overflow-hidden bg-cover bg-center bg-black"
+      // style={{ backgroundImage: `url(${bgImage})` }}
+      >
+        <AnimatedGridPattern
+          numSquares={50}
+          maxOpacity={1.5}
+          duration={1}
+          repeatDelay={0.5}
+          className={cn(
+            // "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
+            "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
+          )}
+        />
+        {/* Optional overlay for readability */}
+        <div className="absolute inset-0  z-0" />
 
-  <div className="relative z-10 flex flex-col items-center gap-12 min-h-[50vh] py-20">
 
-  <ScrollAnimate>
-    <ProshowCard />
-  </ScrollAnimate>
+        <div className="relative z-10 flex flex-col items-center gap-12 min-h-[50vh] py-20">
 
-  <ScrollAnimate>
-    <ProshowCard2 />
-  </ScrollAnimate>
+          <ScrollAnimate>
+            <ProshowCard />
+          </ScrollAnimate>
 
-</div>
+          <ScrollAnimate>
+            <ProshowCard2 />
+          </ScrollAnimate>
 
-</section>
+        </div>
+
+      </section>
 
       <Footer />
 
