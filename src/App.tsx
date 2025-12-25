@@ -15,6 +15,7 @@ import EventDetail from "./pages/EventDetail";
 import ProshowPage from "./pages/ProshowPage";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ui/ScrollToTop";
+import TeamPage from "./pages/TeamPage";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => {
           <Route path="/register" element={<RegistrationPage />} />
           <Route path="/event/:id" element={<EventDetail />} />
           <Route path="/proshow" element={<ProshowPage />} />
+          <Route path="/team" element={<TeamPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -79,11 +79,8 @@ const HighlightsPage: React.FC = () => {
               logo={Logo}
               logoAlt="spark Logo"
               items={[
-                { label: "Home", href: "/" },
-                { label: "About", href: "/about" },
-                { label: "Events", href: "/events" },
-                { label: "Gallery", href: "/gallery" },
-                { label: "Sponsors", href: "/sponsors" },
+
+                { label: "Gallery", href: "/highlights" },
                 { label: "Proshow", href: "/proshow" },
                 { label: "Team", href: "/team" },
                 { label: "Register", href: "/register" },
