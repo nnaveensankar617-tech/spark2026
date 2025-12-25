@@ -77,7 +77,7 @@ export interface Event {
 }
 
 export const events: Event[] = [
-{
+  {
     id: "1",
     title: "Pitch and Talk",
     description:
@@ -882,7 +882,7 @@ export const events: Event[] = [
     venue: "Department Venues",
     categories: ["Technical Events", "Hackathons"],
     department: "",
-    image: "/event-images/sample.png",
+    image: "/event-images/AGENTIX.jpg",
     registrationOpen: true,
     teamSize: "2–4 members",
     rules: [
@@ -905,7 +905,7 @@ export const events: Event[] = [
     venue: "Department Venues",
     categories: ["Technical Events", "Hackathons"],
     department: "",
-    image: "/event-images/sample.png",
+    image: "/event-images/WEBVERSE.jpg",
     registrationOpen: true,
     teamSize: "2–4 members",
     rules: [
@@ -928,7 +928,7 @@ export const events: Event[] = [
     venue: "Department Venues",
     categories: ["Technical Events", "Hackathons"],
     department: "",
-    image: "/event-images/sample.png",
+    image: "/event-images/SENSECRAFT.jpg",
     registrationOpen: true,
     teamSize: "2–4 members",
     rules: [
@@ -972,7 +972,7 @@ export const events: Event[] = [
     venue: "Department Venues",
     categories: ["Technical Events", "Project Expo"],
     department: "",
-    image: "/event-images/sample.png",
+    image: "/event-images/TECHORBIT.jpg",
     registrationOpen: true,
     teamSize: "2–4 members",
     rules: [
@@ -994,7 +994,7 @@ export const events: Event[] = [
     venue: "Department Venues",
     categories: ["Technical Events", "Project Expo"],
     department: "",
-    image: "/event-images/sample.png",
+    image: "/event-images/SIGNALSPHERE.jpg",
     registrationOpen: true,
     teamSize: "2–4 members",
     rules: [
@@ -1016,7 +1016,7 @@ export const events: Event[] = [
     venue: "Department Venues",
     categories: ["Technical Events", "Project Expo"],
     department: "EEE",
-    image: "/event-images/sample.png",
+    image: "/event-images/ENERGEX.jpg",
     registrationOpen: true,
     teamSize: "2–4 members",
     rules: [
@@ -1038,7 +1038,7 @@ export const events: Event[] = [
     venue: "Department Venues",
     categories: ["Technical Events", "Project Expo"],
     department: "CIVIL",
-    image: "/event-images/sample.png",
+    image: "/event-images/INFRASYS.jpg",
     registrationOpen: true,
     teamSize: "2–4 members",
     rules: [
@@ -1054,7 +1054,7 @@ export const events: Event[] = [
 
 
 
-  
+
   {
     id: "45",
     title: "Cricket Men",
