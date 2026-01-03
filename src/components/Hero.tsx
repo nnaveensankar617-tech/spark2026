@@ -49,7 +49,7 @@ const Hero = () => {
     >
       {/* Static Professional Background */}
       <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroBattlefield})` }}>
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" />
+        
         <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-black/40" />
       </div>
 
