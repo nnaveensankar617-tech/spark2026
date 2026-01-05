@@ -455,7 +455,7 @@ export const events: Event[] = [
     venue: "Seminar Hall / Dept. Venues",
     categories: ["Technical Events", "Paper Presentation"],
     department: "CSD",
-    image: "/ALL POSTERS/CSD.jpg",
+    image: "/ALL POSTERS/MCA.jpg",
     registrationOpen: true,
     teamSize: "2–3 members",
     rules: [
@@ -479,7 +479,7 @@ export const events: Event[] = [
     venue: "Seminar Hall / Dept. Venues",
     categories: ["Technical Events", "Paper Presentation"],
     department: "MCA",
-    image: "/ALL POSTERS/MCA.jpg",
+    image: "/ALL POSTERS/MBA.jpg",
     registrationOpen: true,
     teamSize: "2–3 members",
     rules: [
@@ -521,7 +521,7 @@ export const events: Event[] = [
 
   {
     id: "20",
-    title: "Industry Hackathon",
+    title: "Hack Fuzz",
     description:
       "A 24-hour continuous innovation challenge simulating real-world industry problem solving.",
     date: "6th March 2026",
@@ -530,7 +530,7 @@ export const events: Event[] = [
     venue: "Department Venues",
     categories: ["Technical Events", "Hackathons"],
     department: "",
-    image: "/event-images/sample.png",
+    image: "/ALL POSTERS/HACK FUZZ.jpeg",
     registrationOpen: true,
     teamSize: "4 members",
     rules: [
@@ -608,7 +608,7 @@ export const events: Event[] = [
     venue: "Department Venues",
     categories: ["Cultural Events", "Music"],
     department: "",
-    image: "/ALL POSTERS/RHYTHM OF ONE.jpg",
+    image: "/ALL POSTERS/RYTHAM OF ONE.jpg",
     registrationOpen: true,
     teamSize: "",
     rules: [
@@ -717,7 +717,7 @@ export const events: Event[] = [
     venue: "Department Venues",
     categories: ["Cultural Events", "Music"],
     department: "",
-    image: "/ALL POSTERS/ECHOES OF SOUND.jpg",
+    image: "/ALL POSTERS/ECHOS OF SOUND.jpg",
     registrationOpen: true,
     teamSize: "",
     rules: [],
@@ -774,7 +774,7 @@ export const events: Event[] = [
     venue: "Department Venues",
     categories: ["Technical Events"],
     department: "",
-    image: "/ALL POSTERS/LOGICLOCK.jpg",
+    image: "/ALL POSTERS/LOGIC LOCK.jpg",
     registrationOpen: true,
     teamSize: "Individual",
     rules: [
@@ -820,7 +820,7 @@ export const events: Event[] = [
     venue: "Department Venues",
     categories: ["Technical Events"],
     department: "",
-    image: "/ALL POSTERS/SQLQUERYCHALLENGE.jpg",
+    image: "/ALL POSTERS/SQL QUERY CHALLENGE.jpg",
     registrationOpen: true,
     teamSize: "Individual",
     rules: [
@@ -936,7 +936,7 @@ export const events: Event[] = [
     venue: "Department Venues",
     categories: ["Technical Events"],
     department: "",
-    image: "/ALL POSTERS/CUBESOLVING.jpg",
+    image: "/ALL POSTERS/CUBE SOLVING.jpg",
     registrationOpen: true,
     teamSize: "Individual",
     rules: [
@@ -1027,7 +1027,7 @@ export const events: Event[] = [
     venue: "Department Venues",
     categories: ["Technical Events", "Hackathons"],
     department: "MECH",
-    image: "/ALL POSTERS/DESIGNATHON.png",
+    image: "/ALL POSTERS/DESIGNATHON.jpg",
     registrationOpen: true,
     teamSize: "2–4 members",
     rules: [

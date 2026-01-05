@@ -1,6 +1,5 @@
 import { X } from "lucide-react";
 import { Button } from "@/components/event-ui/button";
-import { Badge } from "@/components/event-ui/badge";
 import { categories, dateTags, departments } from "@/components/data/events";
 
 interface FilterSectionProps {
@@ -15,18 +14,18 @@ export function FilterSection({
   const isActive = (filter: string) => activeFilter === filter;
 
   const FilterGroup = ({ title, color, items }: { title: string; color: string; items: string[] }) => (
-    <div className="mb-8 last:mb-0">
-      <h3 className={`text-sm font-bold text-white mb-4 uppercase tracking-widest flex items-center gap-2`}>
+    <div className="mb- last:mb-0">
+      <h2 className={`text-sm font-bold text-white mb-4 uppercase tracking-widest flex items-center gap-2`}>
         <span className={`h-1.5 w-1.5 rounded-sm ${color} shadow-[0_0_8px_${color}]`} />
         {title}
-      </h3>
-      <div className="flex flex-wrap gap-2">
+      </h2>
+      <div className="gap-2">
         {items.map((item) => (
           <div
             key={item}
             onClick={() => onFilterChange(item)}
             className={`
-              relative cursor-pointer px-3 py-1.5 text-xs font-medium transition-all duration-300 clip-path-slant border-l-2
+              relative cursor-pointer px-3 py-1.5 text-l font-medium transition-all duration-300 clip-path-slant border-l-2
               ${isActive(item)
                 ? "bg-white/10 text-white border-primary shadow-[0_0_15px_rgba(var(--primary),0.3)]"
                 : "bg-black/40 text-white border-transparent hover:text-white hover:bg-white/5 hover:border-white/20"
@@ -46,8 +45,8 @@ export function FilterSection({
   return (
     <div className="space-y-2">
       <FilterGroup title="Categories" color="bg-primary" items={categories} />
-      <FilterGroup title="Date" color="bg-secondary" items={dateTags} />
-      <FilterGroup title="Departments" color="bg-accent" items={departments} />
+     
+
 
       {/* Reset Filter */}
       {activeFilter !== "All Events" && (

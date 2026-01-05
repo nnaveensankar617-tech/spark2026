@@ -46,7 +46,7 @@ export function EventCard({ event }: EventCardProps) {
 
           {/* Minimal Content - Title Only */}
           <div className="absolute bottom-0 left-0 right-0 p-4 z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-            <h3 className="text-xl font-bold text-white font-orbitron text-center drop-shadow-md group-hover:text-primary transition-colors">
+            <h3 className="text-l font-bold text-white font-orbitron text-center drop-shadow-md group-hover:text-primary transition-colors">
               {event.title}
             </h3>
           </div>

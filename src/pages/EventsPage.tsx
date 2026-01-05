@@ -1,17 +1,8 @@
 import { useState, useMemo, useEffect } from "react";
-import { Search, X, Calendar, DollarSign, Trophy, Users } from "lucide-react";
 import { useNavigate, useLocation, useSearchParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { FaIndianRupeeSign } from "react-icons/fa6";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+
 import { motion } from "framer-motion";
 
 
