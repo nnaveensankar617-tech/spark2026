@@ -262,16 +262,16 @@ export const events: Event[] = [
   },
   {
     id: "9",
-    title: "Innovation Driven by AI",
+    title: " smart and sustainable cities ",
     description:
-      "Paper presentation on AI-driven innovations and future applications.",
+      "Innovation Driven by AI is a paper presentation event focused on exploring how Artificial Intelligence is transforming industries and society. Participants present research papers or innovative ideas that highlight AI-driven solutions across domains such as healthcare, education, automation, smart systems, and intelligent decision-making.",
     date: "6th March 2026",
     dateTag: "6 Mar",
-    time: "10:30 - 04:30",
+    time: "10:30 - 04:00",
     venue: "Seminar Hall / Dept. Venues",
     categories: ["Technical Events", "Paper Presentation"],
-    department: "",
-    image: "/event-images/sample.png",
+    department: "CIVIL",
+    image: "/ALL POSTERS/CIVIL.jpg",
     registrationOpen: true,
     teamSize: "2–3 members",
     rules: [
@@ -285,16 +285,16 @@ export const events: Event[] = [
   },
   {
     id: "10",
-    title: "Innovations in Mechanical Systems and Designs",
+    title: "Intelligent Manufacturing & Sustainable Mechanical Systems",
     description:
-      "Paper presentation on modern advancements in mechanical engineering.",
+      "Intelligent Manufacturing & Sustainable Mechanical Systems is a paper presentation event that focuses on the integration of advanced manufacturing technologies with sustainable mechanical engineering practices. Participants present research papers or innovative concepts related to smart manufacturing, automation, Industry 4.0, AI-driven production systems, robotics, digital twins, additive manufacturing, and energy-efficient mechanical designs.",
     date: "6th March 2026",
     dateTag: "6 Mar",
-    time: "10:30 - 04:30",
+    time: "10:30 - 04:00",
     venue: "Seminar Hall / Dept. Venues",
     categories: ["Technical Events", "Paper Presentation"],
     department: "MECH",
-    image: "/event-images/sample.png",
+    image: "/ALL POSTERS/ME.jpg",
     registrationOpen: true,
     teamSize: "2–3 members",
     rules: [
@@ -307,16 +307,16 @@ export const events: Event[] = [
   },
   {
     id: "11",
-    title: "Vision Nexus",
+    title: "Smart Power Systems & Electric Mobility",
     description:
-      "Paper presentation on smart, sustainable infrastructure systems.",
-    date: "6th March 2027",
+      " Smart Power Systems & Electric Mobility is a paper presentation event that focuses on advanced electrical power systems and next-generation transportation technologies. Participants present research papers or innovative ideas related to smart grids, renewable energy integration, energy storage systems, power electronics, electric vehicles (EVs), charging infrastructure, and intelligent energy management.   ",
+    date: "6th March 2026",
     dateTag: "6 Mar",
-    time: "10:30 - 04:30",
+    time: "10:30 - 04:00",
     venue: "Seminar Hall / Dept. Venues",
     categories: ["Technical Events", "Paper Presentation"],
-    department: "",
-    image: "/event-images/sample.png",
+    department: "EEE",
+    image: "/ALL POSTERS/EEE.jpg",
     registrationOpen: true,
     teamSize: "2–3 members",
     rules: [
@@ -329,16 +329,16 @@ export const events: Event[] = [
   },
   {
     id: "12",
-    title: "IdeaTronix",
+    title: "Embedded and Intelligent Electronic Systems ",
     description:
-      "Paper presentation on AI-driven management and business systems.",
+      "Embedded and Intelligent Electronic Systems is a paper presentation event that focuses on the design and application of smart embedded technologies and intelligent electronic systems. Participants present research papers or innovative ideas related to embedded systems, microcontrollers, IoT devices, real-time systems, AI-enabled electronics, sensor networks, and hardware–software co-design.",
     date: "6th March 2026",
     dateTag: "6 Mar",
-    time: "10:30 - 04:30",
+    time: "10:30 - 04:00",
     venue: "Seminar Hall / Dept. Venues",
     categories: ["Technical Events", "Paper Presentation"],
     department: "ECE",
-    image: "/event-images/sample.png",
+    image: "/ALL POSTERS/ECE.jpg",
     registrationOpen: true,
     teamSize: "2–3 members",
     rules: [
@@ -352,16 +352,16 @@ export const events: Event[] = [
 
   {
     id: "13",
-    title: "ElectroNova",
+    title: "Next-Generation Computing Technologies ",
     description:
-      "A paper presentation event focusing on modern approaches to cyber security and digital protection.",
+      "Next-Generation Computing Technologies is a paper presentation event that focuses on emerging and advanced computing paradigms shaping the future of technology. Participants present research papers or innovative concepts related to artificial intelligence, quantum computing, edge and cloud computing, high-performance computing, blockchain, cybersecurity, and advanced software architectures.",
     date: "6th March 2026",
     dateTag: "6 Mar",
-    time: "10:30 - 04:30",
+    time: "10:30 - 04:00",
     venue: "Seminar Hall / Dept. Venues",
     categories: ["Technical Events", "Paper Presentation"],
-    department: "EEE",
-    image: "/event-images/sample.png",
+    department: "CSE",
+    image: "/ALL POSTERS/CSE.jpg",
     registrationOpen: true,
     teamSize: "2–3 members",
     rules: [
@@ -376,16 +376,16 @@ export const events: Event[] = [
   },
   {
     id: "14",
-    title: "Smart, Sustainable and Energy Efficient Systems",
+    title: "Cybersecurity, Privacy & Digital Trust",
     description:
-      "A paper presentation event focused on sustainability, smart systems, and efficient resource utilization.",
+      "Cybersecurity, Privacy & Digital Trust is a paper presentation event that focuses on safeguarding digital systems, data, and user trust in an increasingly connected world. Participants present research papers or innovative ideas related to network security, cryptography, data privacy, secure systems, cyber threat intelligence, blockchain security, and trust management frameworks.",
     date: "6th March 2026",
     dateTag: "6 Mar",
-    time: "10:30 - 04:30",
+    time: "10:30 - 04:00",
     venue: "Seminar Hall / Dept. Venues",
     categories: ["Technical Events", "Paper Presentation"],
-    department: "CIVIL",
-    image: "/event-images/sample.png",
+    department: "CSC",
+    image: "/ALL POSTERS/CSC.jpg",
     registrationOpen: true,
     teamSize: "2–3 members",
     rules: [
@@ -399,16 +399,16 @@ export const events: Event[] = [
   },
   {
     id: "15",
-    title: "AI and Future of Management",
+    title: "Artificial Intelligence & Machine Learning Systems",
     description:
-      "Explores how artificial intelligence is reshaping modern management and business practices.",
+      "Artificial Intelligence & Machine Learning Systems is a paper presentation event that focuses on the design, development, and application of intelligent systems powered by AI and ML technologies. Participants present research papers or innovative models related to machine learning algorithms, deep learning, natural language processing, computer vision, reinforcement learning, and AI-driven decision systems.",
     date: "6th March 2026",
     dateTag: "6 Mar",
-    time: "10:30 - 04:30",
+    time: "10:30 - 04:00",
     venue: "Seminar Hall / Dept. Venues",
     categories: ["Technical Events", "Paper Presentation"],
-    department: "MBA",
-    image: "/event-images/sample.png",
+    department: "CSM",
+    image: "/ALL POSTERS/CSM.jpg",
     registrationOpen: true,
     teamSize: "2–3 members",
     rules: [
@@ -422,16 +422,16 @@ export const events: Event[] = [
   },
   {
     id: "16",
-    title: "Modern Approaches to Cyber Security",
+    title: "Data Analytics & Scalable Data Engineering",
     description:
-      "A paper presentation event centered on emerging cyber threats and advanced protection techniques.",
+      "Data Analytics & Scalable Data Engineering is a paper presentation event that focuses on extracting insights from large-scale data and designing robust, scalable data systems. Participants present research papers or innovative ideas related to big data analytics, data pipelines, distributed systems, data warehousing, real-time processing, cloud-based data platforms, and AI-driven analytics.",
     date: "6th March 2026",
     dateTag: "6 Mar",
-    time: "10:30 - 04:30",
+    time: "10:30 - 04:00",
     venue: "Seminar Hall / Dept. Venues",
     categories: ["Technical Events", "Paper Presentation"],
-    department: "CSC",
-    image: "/event-images/sample.png",
+    department: "CSD",
+    image: "/ALL POSTERS/CSD.jpg",
     registrationOpen: true,
     teamSize: "2–3 members",
     rules: [
@@ -444,8 +444,83 @@ export const events: Event[] = [
     ],
     coordinators: []
   },
-  {
+{
     id: "17",
+    title: "Cloud Computing & Secure Digital Infrastructure",
+    description:
+      "Cloud Computing & Secure Digital Infrastructure is a paper presentation event that focuses on modern cloud technologies and secure digital frameworks for efficient, scalable, and reliable computing. Participants present research papers or innovative solutions related to cloud architecture, virtualization, serverless computing, hybrid and multi-cloud strategies, cybersecurity, data protection, and secure network infrastructure..",
+    date: "6th March 2026",
+    dateTag: "6 Mar",
+    time: "10:30 - 04:00",
+    venue: "Seminar Hall / Dept. Venues",
+    categories: ["Technical Events", "Paper Presentation"],
+    department: "CSD",
+    image: "/ALL POSTERS/CSD.jpg",
+    registrationOpen: true,
+    teamSize: "2–3 members",
+    rules: [
+      "Original paper submission is mandatory",
+      "Plagiarism leads to disqualification",
+      "12–15 slides allowed",
+      "PPT/PPTX format only",
+      "Report 15 minutes early",
+      "Judges’ decision is final"
+    ],
+    coordinators: []
+  },
+{
+    id: "18",
+    title: "Digital Transformation & Business Innovation",
+    description:
+      "Digital Transformation & Business Innovation is a paper presentation event that focuses on leveraging digital technologies to transform business processes, models, and strategies. Participants present research papers or innovative solutions related to emerging technologies such as AI, IoT, cloud computing, data analytics, and automation to drive efficiency, competitiveness, and value creation in organizations.",
+    date: "6th March 2026",
+    dateTag: "6 Mar",
+    time: "10:30 - 04:00",
+    venue: "Seminar Hall / Dept. Venues",
+    categories: ["Technical Events", "Paper Presentation"],
+    department: "MCA",
+    image: "/ALL POSTERS/MCA.jpg",
+    registrationOpen: true,
+    teamSize: "2–3 members",
+    rules: [
+      "Original paper submission is mandatory",
+      "Plagiarism leads to disqualification",
+      "12–15 slides allowed",
+      "PPT/PPTX format only",
+      "Report 15 minutes early",
+      "Judges’ decision is final"
+    ],
+    coordinators: []
+  },
+{
+    id: "19",
+    title: "Advanced Software Applications with AI & Cloud",
+    description:
+      "Advanced Software Applications with AI & Cloud is a paper presentation event that focuses on developing innovative software solutions leveraging Artificial Intelligence and cloud technologies. Participants present research papers or projects related to cloud-native applications, AI-integrated software, microservices, serverless architectures, intelligent automation, and scalable distributed systems.",
+    date: "6th March 2026",
+    dateTag: "6 Mar",
+    time: "10:30 - 04:00",
+    venue: "Seminar Hall / Dept. Venues",
+    categories: ["Technical Events", "Paper Presentation"],
+    department: "CS-IT",
+    image: "/ALL POSTERS/IT.jpg",
+    registrationOpen: true,
+    teamSize: "2–3 members",
+    rules: [
+      "Original paper submission is mandatory",
+      "Plagiarism leads to disqualification",
+      "12–15 slides allowed",
+      "PPT/PPTX format only",
+      "Report 15 minutes early",
+      "Judges’ decision is final"
+    ],
+    coordinators: []
+  },
+
+
+
+  {
+    id: "20",
     title: "Industry Hackathon",
     description:
       "A 24-hour continuous innovation challenge simulating real-world industry problem solving.",
@@ -467,7 +542,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "18",
+    id: "21",
     title: "Startup Stories",
     description:
       "An inspiring session showcasing real-life entrepreneurial journeys and startup experiences.",
@@ -484,7 +559,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "19",
+    id: "22",
     title: "Leadership Talks",
     description:
       "An engaging session focused on leadership qualities, personal growth, and professional development.",
@@ -501,7 +576,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "20",
+    id: "23",
     title: "Art Gallery",
     description:
       "A creative showcase celebrating artistic expression through paintings, sketches, and photography.",
@@ -523,7 +598,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "21",
+    id: "24",
     title: "Rhythm of One",
     description:
       "A high-energy musical event celebrating rhythm, coordination, and creativity.",
@@ -545,7 +620,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "22",
+    id: "25",
     title: "Echoes of Soul",
     description:
       "A soulful music event highlighting emotional expression through voice and melody.",
@@ -569,7 +644,7 @@ export const events: Event[] = [
   },
 
   {
-    id: "23",
+    id: "26",
     title: "Laugh Tales",
     description:
       "An entertaining event designed to spread joy, humor, and positivity through comedy and storytelling.",
@@ -592,7 +667,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "24",
+    id: "27",
     title: "Idea Pitching",
     description:
       "An innovation-focused event where participants present unique ideas to solve real-world problems.",
@@ -609,7 +684,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "25",
+    id: "28",
     title: "Youth Summit",
     description:
       "A thought-provoking event that brings young minds together to discuss social, technological, and national issues.",
@@ -632,7 +707,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "26",
+    id: "29",
     title: "Echoes of Sound",
     description:
       "A music-focused event celebrating melody, rhythm, and creative sound performances.",
@@ -649,7 +724,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "27",
+    id: "30",
     title: "Battle of Beats",
     description:
       "An energetic dance and rhythm competition highlighting coordination, performance, and stage presence.",
@@ -666,7 +741,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "28",
+    id: "31",
     title: "Tech Short",
     description:
       "A fast-paced technical speaking event where participants explain a technical concept within a short duration.",
@@ -689,7 +764,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "29",
+    id: "32",
     title: "Logic Lock",
     description:
       "A brain-teasing technical event that challenges logical and analytical thinking through puzzles.",
@@ -712,7 +787,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "30",
+    id: "33",
     title: "Code Crime Scene",
     description:
       "An investigative coding event where participants debug and analyze faulty code.",
@@ -735,7 +810,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "31",
+    id: "34",
     title: "SQL Query Challenge",
     description:
       "A database-focused technical event testing SQL query logic, optimization, and accuracy.",
@@ -758,7 +833,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "32",
+    id: "35",
     title: "Pic Prompt",
     description:
       "A creative technical event where participants build a technical idea inspired by an image prompt.",
@@ -781,7 +856,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "33",
+    id: "36",
     title: "Memory Meltdown",
     description:
       "A fun technical event designed to test memory power, concentration, and observation skills.",
@@ -805,7 +880,7 @@ export const events: Event[] = [
   },
 
   {
-    id: "34",
+    id: "37",
     title: "Tech Dumb Charades",
     description:
       "A technical twist to the classic dumb charades where participants act out technical terms without speaking.",
@@ -828,7 +903,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "35",
+    id: "38",
     title: "UI / UX Design Sprint",
     description:
       "A creative technical event focused on user interface and user experience design.",
@@ -851,7 +926,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "36",
+    id: "39",
     title: "Cube Solving",
     description:
       "A skill-based event challenging speed, logic, and problem-solving using Rubik’s cubes.",
@@ -874,7 +949,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "37",
+    id: "40",
     title: "Agentix",
     description:
       "A hackathon focused on building intelligent agents and automated systems.",
@@ -897,7 +972,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "38",
+    id: "41",
     title: "Webverse",
     description:
       "A hackathon centered on building innovative web-based solutions using modern technologies.",
@@ -920,7 +995,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "39",
+    id: "42",
     title: "Sensecraft",
     description:
       "A hackathon emphasizing smart systems using sensors, data, and intelligent processing.",
@@ -942,7 +1017,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "40",
+    id: "43",
     title: "Designathon",
     description:
       "A creativity-driven event focused on mechanical engineering design and innovation.",
@@ -964,7 +1039,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "41",
+    id: "44",
     title: "Techorbit",
     description:
       "A project expo showcasing innovative technology-based projects and prototypes.",
@@ -986,7 +1061,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "42",
+    id: "45",
     title: "SignalSphere",
     description:
       "A project expo focusing on electronics, communication, and signal processing systems.",
@@ -1008,7 +1083,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "43",
+    id: "46",
     title: "Energex",
     description:
       "A project expo centered on electrical systems and energy-based solutions.",
@@ -1030,7 +1105,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "44",
+    id: "47",
     title: "Infrasys",
     description:
       "A project expo focused on civil engineering and infrastructure systems.",
@@ -1058,7 +1133,7 @@ export const events: Event[] = [
 
 
   {
-    id: "45",
+    id: "48",
     title: "Cricket Men",
     description: "",
     date: "",
@@ -1081,7 +1156,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "46",
+    id: "49",
     title: "Kabaddi Men",
     description: "",
     date: "",
@@ -1104,7 +1179,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "47",
+    id: "50",
     title: "Volleyball Men",
     description: "",
     date: "",
@@ -1126,7 +1201,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "48",
+    id: "51",
     title: "Chess Men",
     description: "",
     date: "",
@@ -1148,7 +1223,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "49",
+    id: "52",
     title: "Carroms Men",
     description: "",
     date: "",
@@ -1169,7 +1244,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "50",
+    id: "53",
     title: "Table Tennis Men",
     description: "",
     date: "",
@@ -1191,7 +1266,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "51",
+    id: "54",
     title: "Handball Men",
     description: "",
     date: "",
@@ -1213,7 +1288,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "52",
+    id: "55",
     title: "Throwball Women",
     description: "",
     date: "",
@@ -1234,7 +1309,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "53",
+    id: "56",
     title: "Kabaddi Women",
     description: "",
     date: "",
@@ -1256,7 +1331,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "54",
+    id: "57",
     title: "Volleyball Women",
     description: "",
     date: "",
@@ -1276,7 +1351,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "55",
+    id: "58",
     title: "Chess Women",
     description: "",
     date: "",
@@ -1296,7 +1371,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "56",
+    id: "59",
     title: "Carroms Women",
     description: "",
     date: "",
@@ -1316,7 +1391,7 @@ export const events: Event[] = [
     coordinators: []
   },
   {
-    id: "57",
+    id: "60",
     title: "Tennikoit Women",
     description: "",
     date: "",
