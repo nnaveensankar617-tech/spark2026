@@ -3,59 +3,56 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FireParticles from "@/components/FireParticles";
 import { Check, ChevronsRight, Crown, Calendar, Zap } from "lucide-react";
+import FAQSection from "@/components/FAQSection";
 
 export default function RegistrationPage() {
   const passes = [
     {
       id: 1,
-      title: "DAY 1",
-      subtitle: "PRELIMINARIES",
-      price: "₹499",
-      type: "STANDARD",
-      image: "/event-images/sample.png", // Replace with specific texture if available
-      description: "Access to all Day 1 technical events and hackathon entry.",
+      title: "ELITE",
+      subtitle: "SVCE STUDENTS",
+      price: "₹250",
+      type: "ALL TWO DAYS",
+      description: "SVCE Students",//Exclusive access for SVCE students to all events on both days.
       includes: [
-        "Hackathon Entry",
-        "Technical Workshops",
-        "Lunch Included",
-        "Participant Kit",
-        "Networking Session"
+        "Access to All Events",
+        "Day 1 & Day 2 Entry",
+        "Convenience Fee Extra",
+        "College ID Required",
+        ""
       ],
-      highlight: false
+      highlight: true
     },
     {
       id: 2,
-      title: "DAY 2",
-      subtitle: "FINALS & CULTURALS",
-      price: "₹499",
-      type: "STANDARD",
-      image: "/event-images/sample.png",
-      description: "Witness the grand finals and the electrifying cultural night.",
+      title: "ELITE",
+      subtitle: "OUTSIDERS",
+      price: "₹500",
+      type: "ALL TWO DAYS",
+      description: "Outsiders",//Full access for non-SVCE students to all events on both days.
       includes: [
-        "RoboWars Finals",
-        "Cultural Night Entry",
-        "Star Night Access",
-        "Lunch Included",
-        "Closing Ceremony"
+        "Access to All Events",
+        "Day 1 & Day 2 Entry",
+        "Convenience Fee Extra",
+        "Participant Kit"
       ],
       highlight: false
     },
     {
       id: 3,
-      title: "ELITE",
-      subtitle: "ALL ACCESS",
-      price: "₹899",
-      type: "COMBO PASS",
-      image: "/event-images/sample.png",
-      description: "The ultimate Warzone experience. Unrestricted access to everything.",
+      title: "1 DAY",
+      subtitle: "OUTSIDERS",
+      price: "₹250",
+      type: "ANY ONE DAY",
+      description: "Outsiders",//Access for non-SVCE students to all events on any single day.
       includes: [
-        "All Day 1 & Day 2 Perks",
-        "VIP Front Row Seats",
-        "Exclusive Merchandise",
-        "Meet & Greet with Guests",
-        "Priority Queue Access"
+        "Access to Day Events",
+        "Choose Day 1 or Day 2",
+        "Convenience Fee Extra",
+        "Participant Kit",
+
       ],
-      highlight: true
+      highlight: false
     }
   ];
 
@@ -91,9 +88,17 @@ export default function RegistrationPage() {
               className={`relative group bg-zinc-900/40 border border-white/5 backdrop-blur-sm overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(220,38,38,0.1)] ${pass.highlight ? 'ring-1 ring-red-500/50' : ''}`}
             >
               {/* Background Texture */}
-              <div className="absolute inset-0 z-0 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
-                <img src={pass.image} alt="" className="w-full h-full object-cover grayscale mix-blend-overlay" />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black" />
+              {/* Background Texture & Watermark */}
+              <div className="absolute inset-0 z-0 opacity-20 group-hover:opacity-40 transition-opacity duration-500 overflow-hidden">
+                {/* Interactive/Animated Lines */}
+
+
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black" />
+              </div>
+
+              {/* Spark Watermark */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10 group-hover:opacity-20 transition-opacity duration-300 font-black font-orbitron text-8xl skew-x-[-20deg] text-white select-none pointer-events-none z-0">
+                SPARK
               </div>
 
               {/* Vertical Accent Line */}
@@ -123,7 +128,7 @@ export default function RegistrationPage() {
                 </div>
 
                 {/* Description */}
-                <p className="text-zinc-400 text-sm font-medium leading-relaxed mb-8 border-l-2 border-white/10 pl-4">
+                <p className="text-[#FFB703] skew-x-[-15deg] text-2xl font-medium leading-relaxed mb-8 border-l-2 border-white/10 pl-4">
                   {pass.description}
                 </p>
 
@@ -156,6 +161,9 @@ export default function RegistrationPage() {
             </div>
           ))}
         </div>
+
+        {/* --- FAQ SECTION --- */}
+        <FAQSection />
 
         {/* --- BOTTOM SECTION --- */}
         <div className="mt-20 text-center max-w-2xl mx-auto">
