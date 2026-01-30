@@ -13,6 +13,7 @@ export function FilterSection({
 }: FilterSectionProps) {
   const isActive = (filter: string) => activeFilter === filter;
 
+  // Reusable group renderer for filter sections
   const FilterGroup = ({ title, color, items }: { title: string; color: string; items: string[] }) => (
     <div className="mb- last:mb-0">
       <h2 className={`text-sm font-bold text-white mb-4 uppercase tracking-widest flex items-center gap-2`}>
