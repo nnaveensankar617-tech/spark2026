@@ -19,6 +19,12 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  
+  // Debug: Log current navigation route
+  useEffect(() => {
+    console.log('Navbar: User navigated to', location.pathname);
+  }, [location.pathname]);
+  
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -35,6 +41,7 @@ const Navbar = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
+    console.log('Navigating to section:', id);
     if (id === "events-page") {
       navigate("/events");
       setIsOpen(false);
