@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 const Gallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Performance note: Consider implementing lazy loading for images and memoization
+  // of galleryItems to avoid unnecessary re-renders when parent component updates
+
   // Placeholder gallery items - in production, these would be actual event photos
   const galleryItems = [
     {

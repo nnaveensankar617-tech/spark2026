@@ -208,8 +208,13 @@ const Footer = () => {
             </div>
             <div>
               <h3 className="font-orbitron font-bold">Call Us</h3>
-              <p className="text-muted-foreground text-sm">+91 9390 223 609</p>
-              <p className="text-muted-foreground text-sm">+91 8309 746 940</p>
+              <a href="tel:+919390223609" className="text-muted-foreground text-sm hover:text-primary transition" aria-label="Call Spark team">
+                +91 9390 223 609
+              </a>
+              <br />
+              <a href="tel:+918309746940" className="text-muted-foreground text-sm hover:text-primary transition" aria-label="Call Spark support">
+                +91 8309 746 940
+              </a>
             </div>
           </div>
         </div>
@@ -222,8 +227,13 @@ const Footer = () => {
             </div>
             <div>
               <h3 className="font-orbitron font-bold">Email Us</h3>
-              <p className="text-muted-foreground text-sm">sac@svce.edu.in</p>
-              <p className="text-muted-foreground text-sm">spark2k26@svce.edu.in</p>
+              <a href="mailto:sac@svce.edu.in" className="text-muted-foreground text-sm hover:text-secondary transition" aria-label="Email SAC">
+                sac@svce.edu.in
+              </a>
+              <br />
+              <a href="mailto:spark2k26@svce.edu.in" className="text-muted-foreground text-sm hover:text-secondary transition" aria-label="Email Spark">
+                spark2k26@svce.edu.in
+              </a>
             </div>
           </div>
         </div>
