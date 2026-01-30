@@ -11,7 +11,12 @@ interface SortSelectProps {
   onChange: (value: string) => void;
 }
 
-const sortOptions = [
+interface SortOption {
+  label: string;
+  value: 'date-desc' | 'date-asc' | 'name-asc' | 'name-desc';
+}
+
+const sortOptions: SortOption[] = [
   { label: "Date (Newest)", value: "date-desc" },
   { label: "Date (Oldest)", value: "date-asc" },
   { label: "Name (A-Z)", value: "name-asc" },
