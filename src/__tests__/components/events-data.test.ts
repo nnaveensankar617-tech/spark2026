@@ -8,6 +8,7 @@ import {
   Department,
   Event 
 } from '@/components/data/events';
+import { getCountsByDateTag, getRegistrationStats } from '@/lib/eventMetrics';
 import { filterAndSortEvents } from '@/lib/eventFilters';
 
 describe('Event Data Service', () => {
@@ -262,6 +263,19 @@ describe('Event Data Service', () => {
       }, {} as Record<string, Event[]>);
       
       expect(Object.keys(groupedByCategory).length).toBeGreaterThan(0);
+    });
+  });
+
+  describe('Event Metrics', () => {
+    it('should compute registration stats from dataset', () => {
+      const stats = getRegistrationStats(events);
+      expect(stats.total).toBe(events.length);
+      expect(stats.open + stats.closed).toBe(events.length);
+    });
+
+    it('should compute counts by date tag from dataset', () => {
+      const counts = getCountsByDateTag(events);
+      expect(counts['6 Mar'] + counts['7 Mar']).toBe(events.length);
     });
   });
 
