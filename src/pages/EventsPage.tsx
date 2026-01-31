@@ -11,6 +11,7 @@ import { SearchBar } from "@/components/SearchBar";
 import { EventCard } from "@/components/EventCard";
 import { DateSelect } from "@/components/DateSelect";
 import { MobileFilterDrawer } from "@/components/MobileFilterDrawer";
+import { EventSummary } from "@/components/EventSummary";
 import { events, categories, dateTags, departments } from "@/components/data/events";
 
 
@@ -185,6 +186,7 @@ export default function EventsPage() {
 
       <div className="min-h-screen bg-transparent relative z-10">
         <main className="container mx-auto px-4 py-8">
+          <EventSummary />
           {/* Search and Controls */}
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
             <div className="flex-1">
