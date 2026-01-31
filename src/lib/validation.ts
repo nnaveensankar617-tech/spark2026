@@ -13,13 +13,15 @@ export interface ValidationResult {
  * @returns Validation result
  */
 export function validateEmail(email: string): ValidationResult {
-  if (!email || email.trim().length === 0) {
+  const trimmedEmail = email?.trim?.() ?? '';
+
+  if (!trimmedEmail || trimmedEmail.length === 0) {
     return { isValid: false, error: 'Email is required' };
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   
-  if (!emailRegex.test(email)) {
+  if (!emailRegex.test(trimmedEmail)) {
     return { isValid: false, error: 'Invalid email format' };
   }
 
@@ -32,17 +34,23 @@ export function validateEmail(email: string): ValidationResult {
  * @returns Validation result
  */
 export function validatePhone(phone: string): ValidationResult {
-  if (!phone || phone.trim().length === 0) {
+  const trimmedPhone = phone?.trim?.() ?? '';
+
+  if (!trimmedPhone || trimmedPhone.length === 0) {
     return { isValid: false, error: 'Phone number is required' };
   }
 
   // Remove spaces and hyphens
-  const cleanPhone = phone.replace(/[\s-]/g, '');
+  const cleanPhone = trimmedPhone.replace(/[+\s\-()]/g, '');
+  const normalizedPhone =
+    cleanPhone.startsWith('91') && cleanPhone.length === 12
+      ? cleanPhone.slice(2)
+      : cleanPhone;
 
   // Check if it's a valid Indian phone number (10 digits)
   const phoneRegex = /^[6-9]\d{9}$/;
 
-  if (!phoneRegex.test(cleanPhone)) {
+  if (!phoneRegex.test(normalizedPhone)) {
     return { isValid: false, error: 'Invalid phone number format' };
   }
 
@@ -56,17 +64,19 @@ export function validatePhone(phone: string): ValidationResult {
  * @returns Validation result
  */
 export function validateName(name: string, fieldName: string = 'Name'): ValidationResult {
-  if (!name || name.trim().length === 0) {
+  const trimmedName = name?.trim?.() ?? '';
+
+  if (!trimmedName || trimmedName.length === 0) {
     return { isValid: false, error: `${fieldName} is required` };
   }
 
-  if (name.trim().length < 2) {
+  if (trimmedName.length < 2) {
     return { isValid: false, error: `${fieldName} must be at least 2 characters` };
   }
 
   const nameRegex = /^[a-zA-Z\s.'-]+$/;
 
-  if (!nameRegex.test(name)) {
+  if (!nameRegex.test(trimmedName)) {
     return { isValid: false, error: `${fieldName} contains invalid characters` };
   }
 
@@ -79,11 +89,13 @@ export function validateName(name: string, fieldName: string = 'Name'): Validati
  * @returns Validation result
  */
 export function validateCollege(college: string): ValidationResult {
-  if (!college || college.trim().length === 0) {
+  const trimmedCollege = college?.trim?.() ?? '';
+
+  if (!trimmedCollege || trimmedCollege.length === 0) {
     return { isValid: false, error: 'College name is required' };
   }
 
-  if (college.trim().length < 3) {
+  if (trimmedCollege.length < 3) {
     return { isValid: false, error: 'College name must be at least 3 characters' };
   }
 
@@ -98,6 +110,11 @@ export function validateCollege(college: string): ValidationResult {
 export function validateEventSelection(events: string[]): ValidationResult {
   if (!events || events.length === 0) {
     return { isValid: false, error: 'Please select at least one event' };
+  }
+
+  const invalidEvent = events.find(eventId => !eventId || eventId.trim().length === 0);
+  if (invalidEvent !== undefined) {
+    return { isValid: false, error: 'Selected events contain invalid entries' };
   }
 
   if (events.length > 5) {
