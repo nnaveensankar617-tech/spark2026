@@ -78,6 +78,10 @@ export interface Event {
   coordinators?: { name: string; phone: string }[];
 }
 
+export function getPrimaryCategory(event: Event): EventCategory {
+  return event.categories.length > 0 ? event.categories[0] : "All Events";
+}
+
 export const events: Event[] = [
 
 {

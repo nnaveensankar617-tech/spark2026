@@ -127,4 +127,20 @@ describe('EventCard Component', () => {
     const card = container.querySelector('.aspect-square');
     expect(card).toBeTruthy();
   });
+
+  it('should show category badge', () => {
+    const { container } = renderWithRouter(<EventCard event={mockEvent} />);
+    expect(container.textContent).toContain('Hackathons');
+  });
+
+  it('should show registration open badge', () => {
+    const { container } = renderWithRouter(<EventCard event={mockEvent} />);
+    expect(container.textContent).toContain('Open');
+  });
+
+  it('should show registration closed badge', () => {
+    const eventClosed = { ...mockEvent, registrationOpen: false };
+    const { container } = renderWithRouter(<EventCard event={eventClosed} />);
+    expect(container.textContent).toContain('Closed');
+  });
 });
