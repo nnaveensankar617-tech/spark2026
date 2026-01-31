@@ -1,6 +1,31 @@
 # Spark 2026 Event Management Platform
 
-> **IMPORTANT**: This project uses npm ONLY. Do not use bun, yarn, or pnpm.
+> **CRITICAL**: This project **ENFORCES npm ONLY**.  
+> - Do NOT use bun, yarn, or pnpm
+> - Enforced by: `packageManager: npm@10.2.4` in package.json
+> - Lock file: `package-lock.json` must be used
+> - Configuration: `.npmrc` with `engine-strict=true`
+
+## Quick Start
+
+```bash
+# Verify you have npm@10.2.4+
+npm --version
+
+# Install dependencies (npm ci is recommended for CI/CD)
+npm install
+# OR for locked environment
+npm ci
+
+# Run tests
+npm test
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
 
 ## Project info
 
