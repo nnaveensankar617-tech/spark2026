@@ -82,3 +82,12 @@ export function capitalize(text: string): string {
   if (!text) return '';
   return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
 }
+
+/**
+ * Normalize text for search comparisons
+ * @param value Text to normalize
+ * @returns Lowercased, trimmed string
+ */
+export function normalizeText(value: string): string {
+  return value.trim().toLowerCase();
+}

@@ -4,7 +4,8 @@ import {
   formatDate, 
   isEmpty, 
   truncateText, 
-  capitalize 
+  capitalize,
+  normalizeText
 } from '@/lib/utils';
 
 describe('Utils Library', () => {
@@ -161,6 +162,12 @@ describe('Utils Library', () => {
       expect(enResult).toBeTruthy();
       expect(deResult).toBeTruthy();
     });
+
+    it('should return empty string for invalid Date object', () => {
+      const invalidDate = new Date('invalid');
+      const result = formatDate(invalidDate);
+      expect(result).toBe('');
+    });
   });
 
   describe('isEmpty', () => {
@@ -276,6 +283,20 @@ describe('Utils Library', () => {
 
     it('should handle special characters', () => {
       expect(capitalize('@hello')).toBe('@hello');
+    });
+  });
+
+  describe('normalizeText', () => {
+    it('should trim whitespace', () => {
+      expect(normalizeText('  Hello  ')).toBe('hello');
+    });
+
+    it('should lowercase text', () => {
+      expect(normalizeText('SPARK')).toBe('spark');
+    });
+
+    it('should handle mixed casing with spaces', () => {
+      expect(normalizeText('  MiXeD Case  ')).toBe('mixed case');
     });
   });
 });
