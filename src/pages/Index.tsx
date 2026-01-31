@@ -7,6 +7,11 @@ import Footer from "@/components/Footer";
 import SparkEffect from "@/components/SparkEffect";
 import { motion } from "framer-motion";
 
+/**
+ * Main landing page component for SPARK 2026.
+ * Features hero section, about stats, events showcase, and gallery preview.
+ * @page
+ */
 const Index = () => {
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },

@@ -19,6 +19,11 @@ import TeamPage from "./pages/TeamPage";
 
 const queryClient = new QueryClient();
 
+/**
+ * Root application component with React Query and routing configuration.
+ * Provides global state management, notifications, and route definitions.
+ * @component
+ */
 const App = () => {
 
 

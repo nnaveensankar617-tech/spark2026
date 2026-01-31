@@ -7,6 +7,11 @@ interface FilterSectionProps {
   onFilterChange: (filter: string) => void;
 }
 
+/**
+ * Filter sidebar component for event categorization.
+ * Supports filtering by categories, date tags, and departments.
+ * @component
+ */
 export function FilterSection({
   activeFilter,
   onFilterChange,

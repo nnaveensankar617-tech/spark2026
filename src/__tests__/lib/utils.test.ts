@@ -8,6 +8,10 @@ import {
   normalizeText
 } from '@/lib/utils';
 
+/**
+ * Test suite for utility functions.
+ * Covers class name merging, debouncing, date formatting, and text manipulation.
+ */
 describe('Utils Library', () => {
   describe('cn (className merger)', () => {
     it('should merge single class name', () => {

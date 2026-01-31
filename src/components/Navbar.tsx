@@ -13,6 +13,11 @@ import { motion, useScroll, useSpring } from "framer-motion";
 
 
 
+/**
+ * Main navigation bar component with responsive mobile menu.
+ * Features scroll progress indicator and route-based active states.
+ * @component
+ */
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isEventsOpen, setIsEventsOpen] = useState(false);

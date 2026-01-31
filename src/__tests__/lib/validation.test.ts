@@ -8,6 +8,10 @@ import {
   RegistrationFormData,
 } from '@/lib/validation';
 
+/**
+ * Test suite for form validation utilities.
+ * Covers email, phone, name validation with edge cases.
+ */
 describe('Validation Utilities', () => {
   describe('validateEmail', () => {
     it('should accept valid email addresses', () => {

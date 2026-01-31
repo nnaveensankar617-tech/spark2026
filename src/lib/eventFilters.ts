@@ -1,3 +1,8 @@
+/**
+ * Event filtering and sorting utilities.
+ * Provides type-safe filtering by search, category, date, and department.
+ * @module eventFilters
+ */
 import type { DateTag, Department, Event, EventCategory } from '@/components/data/events';
 import { normalizeText } from '@/lib/utils';
 

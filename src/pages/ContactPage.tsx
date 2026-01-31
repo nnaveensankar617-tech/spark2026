@@ -9,6 +9,11 @@ import Footer from "@/components/Footer";
 import FireParticles from "@/components/FireParticles";
 import sparkLogo from "@/assets/spark-logo.png";
 
+/**
+ * Contact page with form submission and social media links.
+ * Provides multiple contact channels for SPARK 2026 inquiries.
+ * @page
+ */
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -19,6 +24,11 @@ const ContactPage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Basic validation
+    if (!formData.name?.trim() || !formData.email?.trim()) {
+      toast.error("Please fill in all required fields");
+      return;
+    }
     toast.success("Message sent! We'll get back to you soon.", {
       description: "Thank you for contacting SPARK 2K26",
     });

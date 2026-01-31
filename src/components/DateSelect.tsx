@@ -12,6 +12,11 @@ interface DateSelectProps {
     onChange: (value: string) => void;
 }
 
+/**
+ * Date filter dropdown component for event filtering.
+ * Allows users to filter events by date tags.
+ * @component
+ */
 export function DateSelect({ value, onChange }: DateSelectProps) {
     // Determine if the current value is one of the date tags, otherwise standard placeholder logic or "All Dates"
     const isDateSelected = dateTags.includes(value as any);

@@ -3,6 +3,11 @@ import { motion } from "framer-motion";
 import { Gamepad2, Code, Music, Lightbulb, ChevronRight, Trophy, Zap, Cpu } from "lucide-react";
 import { Link } from "react-router-dom";
 
+/**
+ * Events showcase section displaying event categories with animated cards.
+ * Features technical, cultural, sports, and gaming event categories.
+ * @component
+ */
 const Events = () => {
   const categories = [
     {

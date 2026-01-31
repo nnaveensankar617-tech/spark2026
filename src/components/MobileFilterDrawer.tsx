@@ -18,6 +18,11 @@ interface MobileFilterDrawerProps {
   onOpenChange: (open: boolean) => void;
 }
 
+/**
+ * Mobile drawer component for event filtering.
+ * Provides category, date, and department filters in a mobile-optimized drawer.
+ * @component
+ */
 export function MobileFilterDrawer({
   activeFilter,
   onFilterChange,

@@ -25,6 +25,11 @@ const categoryColors: Record<string, string> = {
   Exhibition: "bg-pink-500/10 text-pink-400 border-pink-500/50 shadow-[0_0_15px_rgba(236,72,153,0.3)]",
 };
 
+/**
+ * Event detail page displaying comprehensive event information.
+ * Features related events, sharing functionality, and registration CTAs.
+ * @page
+ */
 export default function EventDetail() {
   const { id } = useParams();
   const navigate = useNavigate();

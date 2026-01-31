@@ -1,3 +1,8 @@
+/**
+ * Jest configuration for SPARK 2026 test suite.
+ * Uses ts-jest preset with jsdom environment for React component testing.
+ * Configured for npm-only workflow.
+ */
 export default {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',

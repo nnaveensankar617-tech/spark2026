@@ -1,6 +1,11 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
+/**
+ * 404 error page for undefined routes.
+ * Logs attempted routes for debugging and provides navigation back to home.
+ * @page
+ */
 const NotFound = () => {
   const location = useLocation();
 

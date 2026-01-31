@@ -8,6 +8,11 @@ interface EventCardProps {
   event: Event;
 }
 
+/**
+ * Event card component displaying event preview with category-based theming.
+ * Features animated hover effects and registration status badges.
+ * @component
+ */
 export function EventCard({ event }: EventCardProps) {
   const primaryCategory = getPrimaryCategory(event);
   const categoryTheme = getCategoryTheme(primaryCategory);

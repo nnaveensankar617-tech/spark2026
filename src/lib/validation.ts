@@ -1,5 +1,7 @@
 /**
- * Form validation utilities for SPARK 2026 event registration
+ * Form validation utilities for SPARK 2026 event registration.
+ * Provides type-safe validation functions with detailed error messages.
+ * @module validation
  */
 
 export interface ValidationResult {

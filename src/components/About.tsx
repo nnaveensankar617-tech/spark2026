@@ -1,3 +1,8 @@
+/**
+ * About section component displaying event statistics and highlights.
+ * Features animated stat cards with gradient effects.
+ * @component
+ */
 const About = () => {
   return (
     <section id="about" className="py-24 relative overflow-hidden bg-background">

@@ -1,3 +1,8 @@
+/**
+ * Event display theme utilities.
+ * Provides category-based theming and registration badge helpers.
+ * @module eventDisplay
+ */
 import type { EventCategory } from '@/components/data/events';
 
 export interface CategoryTheme {

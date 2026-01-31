@@ -6,6 +6,11 @@ import heroBattlefield from "@/assets/hero-battlefield.jpg";
 import sparkLogo from "@/assets/spark-logo.png";
 import { motion } from "framer-motion";
 
+/**
+ * Hero section component with countdown timer and call-to-action buttons.
+ * Features animated background and event date countdown.
+ * @component
+ */
 const Hero = () => {
   const navigate = useNavigate();
   const ref = useRef(null);
