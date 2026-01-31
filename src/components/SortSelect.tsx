@@ -23,9 +23,14 @@ const sortOptions: SortOption[] = [
   { label: "Name (Z-A)", value: "name-desc" },
 ];
 
+/**
+ * Sort dropdown component for event ordering.
+ * Supports sorting by date and name in ascending/descending order.
+ * @component
+ */
 export function SortSelect({ value, onChange }: SortSelectProps) {
   return (
-    <Select value={value} onValueChange={onChange}>
+    <Select value={value || "date-desc"} onValueChange={onChange}>
       <SelectTrigger className="w-[180px] bg-card border-border/50 text-foreground">
         <SelectValue placeholder="Sort by" />
       </SelectTrigger>

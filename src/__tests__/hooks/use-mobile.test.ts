@@ -1,6 +1,10 @@
 import { renderHook, act, waitFor } from '@testing-library/react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
+/**
+ * Test suite for useIsMobile custom hook.
+ * Verifies responsive breakpoint detection at 768px.
+ */
 describe('useIsMobile Hook', () => {
   const originalInnerWidth = window.innerWidth;
 

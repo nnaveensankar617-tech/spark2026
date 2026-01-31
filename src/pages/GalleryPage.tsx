@@ -17,6 +17,11 @@ interface GalleryItem {
   description: string;
 }
 
+/**
+ * Gallery page showcasing event photos and videos.
+ * Features category filtering and lightbox view.
+ * @page
+ */
 const GalleryPage = () => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("All");

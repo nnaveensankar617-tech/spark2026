@@ -8,6 +8,11 @@ import { TimelineDemo } from "@/components/ui/TimelineDemo";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 
+/**
+ * About page showcasing SPARK 2026 mission, vision, and event timeline.
+ * Features animated statistics and event journey.
+ * @page
+ */
 const AboutPage = () => {
   const stats = [
     { icon: Users, value: "10K+", label: "Participants", color: "text-primary" },

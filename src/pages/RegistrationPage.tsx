@@ -5,6 +5,11 @@ import FireParticles from "@/components/FireParticles";
 import { Check, ChevronsRight, Crown, Calendar, Zap } from "lucide-react";
 import FAQSection from "@/components/FAQSection";
 
+/**
+ * Registration page displaying ticket passes and pricing.
+ * Features SVCE student passes, outsider passes, and FAQ section.
+ * @page
+ */
 export default function RegistrationPage() {
   const passes = [
     {

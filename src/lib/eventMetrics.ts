@@ -1,3 +1,8 @@
+/**
+ * Event metrics and analytics utilities.
+ * Provides functions for calculating event statistics and aggregations.
+ * @module eventMetrics
+ */
 import type { Event, EventCategory, DateTag, Department } from '@/components/data/events';
 
 export interface RegistrationStats {
@@ -6,7 +11,15 @@ export interface RegistrationStats {
   closed: number;
 }
 
+/**
+ * Calculate registration statistics for events.
+ * @param events - Array of events to analyze
+ * @returns Registration stats with total, open, and closed counts
+ */
 export function getRegistrationStats(events: Event[]): RegistrationStats {
+  if (!events || events.length === 0) {
+    return { total: 0, open: 0, closed: 0 };
+  }
   const open = events.filter(event => event.registrationOpen).length;
   const total = events.length;
   return {

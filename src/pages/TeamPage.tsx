@@ -4,6 +4,11 @@ import Footer from "@/components/Footer";
 import TeamGallery from "../components/ui/TeamGallery";
 import { motion } from "motion/react";
 
+/**
+ * Team page showcasing SPARK 2026 organizing committee.
+ * Features animated backgrounds and team member gallery.
+ * @page
+ */
 const Team: React.FC = () => {
   return (
     <>

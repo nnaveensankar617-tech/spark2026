@@ -5,6 +5,11 @@ import {
   getTopDepartments,
 } from '@/lib/eventMetrics';
 
+/**
+ * Event summary banner component displaying aggregate event statistics.
+ * Shows total event count, registration status, top category, and top departments.
+ * @component
+ */
 export function EventSummary() {
   const registrationStats = getRegistrationStats(events);
   const topCategory = getMostCommonCategory(events);
