@@ -13,6 +13,7 @@ import { DateSelect } from "@/components/DateSelect";
 import { MobileFilterDrawer } from "@/components/MobileFilterDrawer";
 import { EventSummary } from "@/components/EventSummary";
 import { events, categories, dateTags, departments } from "@/components/data/events";
+import { filterAndSortEvents } from "@/lib/eventFilters";
 
 
 export default function EventsPage() {
@@ -41,60 +42,14 @@ export default function EventsPage() {
      We now explicitly check validity.
   */
   const filteredEvents = useMemo(() => {
-    let filtered = [...events];
-
-    // Search filter
-    if (searchQuery) {
-      const query = searchQuery.toLowerCase().trim();
-      filtered = filtered.filter(
-        (event) =>
-          event.title.toLowerCase().includes(query) ||
-          event.description.toLowerCase().includes(query) ||
-          event.venue.toLowerCase().includes(query)
-      );
-    }
-
-    // Filter Logic
-    if (activeFilter !== "All Events") {
-      const isCategory = categories.includes(activeFilter as any);
-      const isDate = dateTags.includes(activeFilter as any);
-      const isDepartment = departments.includes(activeFilter as any);
-
-      if (isCategory) {
-        filtered = filtered.filter((event) => event.categories.includes(activeFilter as any));
-      } else if (isDate) {
-        filtered = filtered.filter((event) => event.dateTag === activeFilter);
-      } else if (isDepartment) {
-        filtered = filtered.filter((event) => event.department === activeFilter);
-      } else {
-        // Fallback: If filter is unknown, show nothing or all? 
-        // Showing all might be confusing (User's issue). 
-        // Let's assume if a filter is set but unrelated, it matches nothing.
-        // But wait, if it's set via state, it MUST be valid.
-        // Unless it came from URL param that was invalid.
-        // For safety, if we have a non-empty filter that doesn't match known groups, 
-        // likely we should show nothing or handle it gracefully. 
-        // Currently, falling through means showing filtered (by search) events.
-      }
-    }
-
-    // Sort
-    switch (sortBy) {
-      case "date-desc":
-        filtered.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-        break;
-      case "date-asc":
-        filtered.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-        break;
-      case "name-asc":
-        filtered.sort((a, b) => a.title.localeCompare(b.title));
-        break;
-      case "name-desc":
-        filtered.sort((a, b) => b.title.localeCompare(a.title));
-        break;
-    }
-
-    return filtered;
+    return filterAndSortEvents(events, {
+      searchQuery,
+      activeFilter,
+      sortBy,
+      categories,
+      dateTags,
+      departments,
+    });
   }, [searchQuery, activeFilter, sortBy]);
 
 

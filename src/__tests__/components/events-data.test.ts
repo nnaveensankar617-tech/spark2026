@@ -9,6 +9,7 @@ import {
   Event 
 } from '@/components/data/events';
 import { getCountsByDateTag, getRegistrationStats } from '@/lib/eventMetrics';
+import { filterAndSortEvents } from '@/lib/eventFilters';
 
 describe('Event Data Service', () => {
   describe('Constants Validation', () => {
@@ -275,6 +276,51 @@ describe('Event Data Service', () => {
     it('should compute counts by date tag from dataset', () => {
       const counts = getCountsByDateTag(events);
       expect(counts['6 Mar'] + counts['7 Mar']).toBe(events.length);
+    });
+  });
+
+  describe('Event Filtering Helper', () => {
+    it('should filter by date tag using helper', () => {
+      const filtered = filterAndSortEvents(events, {
+        searchQuery: '',
+        activeFilter: '6 Mar',
+        sortBy: 'name-asc',
+        categories,
+        dateTags,
+        departments,
+      });
+
+      filtered.forEach(event => {
+        expect(event.dateTag).toBe('6 Mar');
+      });
+    });
+
+    it('should filter by department using helper', () => {
+      const filtered = filterAndSortEvents(events, {
+        searchQuery: '',
+        activeFilter: 'CSE',
+        sortBy: 'name-asc',
+        categories,
+        dateTags,
+        departments,
+      });
+
+      filtered.forEach(event => {
+        expect(event.department).toBe('CSE');
+      });
+    });
+
+    it('should return empty list for invalid filter', () => {
+      const filtered = filterAndSortEvents(events, {
+        searchQuery: '',
+        activeFilter: 'Invalid Filter',
+        sortBy: 'name-asc',
+        categories,
+        dateTags,
+        departments,
+      });
+
+      expect(filtered).toEqual([]);
     });
   });
 

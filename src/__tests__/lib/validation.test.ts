@@ -52,6 +52,12 @@ describe('Validation Utilities', () => {
       expect(result.isValid).toBe(false);
       expect(result.error).toBe('Email is required');
     });
+
+    it('should trim surrounding whitespace for valid email', () => {
+      const result = validateEmail('  user@example.com  ');
+      expect(result.isValid).toBe(true);
+      expect(result.error).toBeUndefined();
+    });
   });
 
   describe('validatePhone', () => {
@@ -80,6 +86,19 @@ describe('Validation Utilities', () => {
       validPhones.forEach(phone => {
         const result = validatePhone(phone);
         expect(result.isValid).toBe(true);
+      });
+    });
+
+    it('should accept phone numbers with country code prefix', () => {
+      const validPhones = [
+        '+91 98765 43210',
+        '91-9876543210',
+      ];
+
+      validPhones.forEach(phone => {
+        const result = validatePhone(phone);
+        expect(result.isValid).toBe(true);
+        expect(result.error).toBeUndefined();
       });
     });
 
@@ -218,6 +237,12 @@ describe('Validation Utilities', () => {
       const result = validateEventSelection(events);
       expect(result.isValid).toBe(false);
       expect(result.error).toContain('maximum of 5 events');
+    });
+
+    it('should reject selections with empty event IDs', () => {
+      const result = validateEventSelection(['event1', '  ', 'event3']);
+      expect(result.isValid).toBe(false);
+      expect(result.error).toBe('Selected events contain invalid entries');
     });
   });
 
