@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "description": "Spark 2026 event management platform - npm only",
-  "packageManager": "npm@9.0.0",
+  "packageManager": "npm@10.2.4",
   "engines": {
     "node": ">=18.0.0",
-    "npm": ">=9.0.0"
+    "npm": ">=10.2.4"
   },
   "scripts": {
     "dev": "vite",

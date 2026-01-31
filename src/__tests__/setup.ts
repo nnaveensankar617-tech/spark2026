@@ -1,3 +1,8 @@
+/**
+ * Jest setup file for SPARK 2026 tests.
+ * Configures testing environment with necessary mocks and globals.
+ * NOTE: This project uses npm ONLY. Enforced via packageManager in package.json.
+ */
 import '@testing-library/jest-dom';
 
 // Mock window.matchMedia
